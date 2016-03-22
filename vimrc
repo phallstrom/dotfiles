@@ -50,4 +50,8 @@ let g:pick_executable = "pick"
 " nnoremap <Leader>t :call PickFileTab()<CR>
 nnoremap <Leader>b :call PickBuffer()<CR>
 
+" https://github.com/tpope/vim-commentary/commit/4dcfc318e0b02fdbb0c2d9ff77cf3562b46eea25
+xmap \\  <Plug>Commentary
+nmap \\  <Plug>Commentary
+
 let g:ag_working_path_mode="r"
