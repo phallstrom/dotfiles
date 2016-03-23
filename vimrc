@@ -55,3 +55,9 @@ xmap \\  <Plug>Commentary
 nmap \\  <Plug>Commentary
 
 let g:ag_working_path_mode="r"
+
+set updatetime=250
+
+nmap <silent> <leader>s :TestNearest<CR>
+nmap <silent> <leader>t :TestFile<CR>
+nmap <silent> <leader>T :TestSuite<CR>
