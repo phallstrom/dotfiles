@@ -61,3 +61,7 @@ set updatetime=250
 nmap <silent> <leader>s :TestNearest<CR>
 nmap <silent> <leader>t :TestFile<CR>
 nmap <silent> <leader>T :TestSuite<CR>
+
+set mouse=a
+vnoremap <Leader>c "*y
+vnoremap <Leader>v "*y
