@@ -65,3 +65,5 @@ nmap <silent> <leader>T :TestSuite<CR>
 set mouse=a
 vnoremap <Leader>c "*y
 vnoremap <Leader>v "*y
+
+set nofixeol
