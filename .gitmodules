@@ -46,3 +46,4 @@
 [submodule "vim/bundle/vim-test"]
 	path = vim/bundle/vim-test
 	url = https://github.com/janko-m/vim-test
+  ignore = dirty
