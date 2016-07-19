@@ -66,3 +66,10 @@ vnoremap <Leader>c "*y
 noremap <Leader>v "*p
 
 set nofixeol
+
+set listchars=trail:∙
+set list
+ToggleWhitespace
+CurrentLineWhitespaceOff soft
+ToggleStripWhitespaceOnSave
+highlight ExtraWhitespace ctermbg=none
