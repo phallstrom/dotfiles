@@ -69,7 +69,7 @@ set nofixeol
 
 set listchars=trail:∙
 set list
-ToggleWhitespace
-CurrentLineWhitespaceOff soft
-ToggleStripWhitespaceOnSave
+let g:better_whitespace_enabled=1
+let g:current_line_whitespace_disabled_soft=1
+let g:strip_whitespace_on_save=1
 highlight ExtraWhitespace ctermbg=none
