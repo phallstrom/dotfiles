@@ -5,7 +5,6 @@ alias lal='ls -la'
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
-alias railsscreen='screen -c $HOME/.screenrails -S '
 
 alias cdb='cd $HOME/Work/bridge'
 alias bsql='psql -d get_smart_development'
