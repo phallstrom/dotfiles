@@ -6,7 +6,10 @@
 - clean: ['~']
 
 - link:
-    ~/.vimrc: vim/vimrc
+    ~/.bash_completion: bash/bash_completion
+    ~/.bash_profile: bash/bash_profile
+    ~/.bashrc: bash/bashrc
     ~/.vim: vim
+    ~/.vimrc: vim/vimrc
 
 - shell: []

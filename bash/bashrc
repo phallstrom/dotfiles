@@ -1,0 +1,66 @@
+alias ls='ls -F'
+alias ll='ls -l'
+alias la='ls -a'
+alias lal='ls -la'
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
+alias railsscreen='screen -c $HOME/.screenrails -S '
+
+alias cdb='cd $HOME/Work/bridge'
+alias bsql='psql -d get_smart_development'
+
+export EDITOR=vim
+export VISUAL=vim
+export LESS="-erX $LESS"
+export GREP_OPTIONS="--exclude=\*.svn\* --exclude=\*.git\* --exclude=\*.rsync_cache\* --exclude=*\.swp"
+
+# https://bosker.wordpress.com/2012/02/12/bash-scripters-beware-of-the-cdpath/
+CDPATH=".:~"
+
+export DISABLE_SPRING=1
+
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+export PATH="$HOME/bin:$PATH"
+export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
+export PATH="$HOME/.rvm/bin:$PATH"
+export PATH="$PATH:node_modules/.bin"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+function psg() {
+   ps auxwww | grep -i $1 | grep -v grep
+} 
+
+function cdr {
+  cwd=$PWD
+  while [[ ! -f "$cwd/Rakefile" && ! -f "$cwd/Gemfile" && "$cwd" != "$HOME" ]]
+  do
+    cwd=${cwd%\/*}
+  done
+  cd $cwd
+}
+
+# If we're in a git repository return the branch name,
+# otherwise nothing.  We include the '...' here so it isn't
+# duplicated in the output
+function ps1_git {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  echo " … "${ref#refs/heads/}
+}
+
+ps1="\[\e[0;34m\]"                         # colored text
+ps1=$ps1"\u@\h"                            # user@host
+ps1=$ps1" … "
+ps1=$ps1"\$(rvm-prompt v)\$(rvm-prompt g)" # 1.9.3@gemset
+ps1=$ps1"\$(ps1_git)"                      # git branch
+ps1=$ps1" … "
+ps1=$ps1"\w"                               # relative working dir
+ps1=$ps1"\\n"                              # new line
+ps1=$ps1"\$"                               # $
+ps1=$ps1" "                                # space
+ps1=$ps1"\[\e[0m\]"                        # reset color
+export PS1=$ps1
+
+PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}\007"'
+
