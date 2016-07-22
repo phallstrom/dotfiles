@@ -6,7 +6,7 @@
 - clean: ['~']
 
 - link:
-    ~/.vimrc: vimrc
+    ~/.vimrc: vim/vimrc
     ~/.vim: vim
 
 - shell: []
