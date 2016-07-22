@@ -1,7 +1,7 @@
 call pathogen#infect()
 call pathogen#helptags()
 
-set t_Co=256 
+set t_Co=256
 
 set nocompatible      " We're running Vim, not Vi!
 syntax on             " Enable syntax highlighting
@@ -69,7 +69,3 @@ set nofixeol
 
 set listchars=trail:∙
 set list
-let g:better_whitespace_enabled=1
-let g:current_line_whitespace_disabled_soft=1
-let g:strip_whitespace_on_save=1
-highlight ExtraWhitespace ctermbg=none
