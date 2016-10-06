@@ -67,5 +67,4 @@ noremap <Leader>v "*p
 
 set nofixeol
 
-set listchars=trail:∙
-set list
++set formatoptions+=j " Delete comment character when joining commented lines
