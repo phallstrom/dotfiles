@@ -67,4 +67,4 @@ noremap <Leader>v "*p
 
 set nofixeol
 
-+set formatoptions+=j " Delete comment character when joining commented lines
+set formatoptions+=j " Delete comment character when joining commented lines
