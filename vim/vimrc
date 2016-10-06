@@ -24,8 +24,6 @@ set nrformats=
 set backupdir=$HOME/.vimbackup,.
 set directory=$HOME/.vimswap,.
 
-au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
-    \ exe "normal g'\"" | endif
 syntax on
 
 au FocusLost * :wa
@@ -68,3 +66,6 @@ noremap <Leader>v "*p
 set nofixeol
 
 set formatoptions+=j " Delete comment character when joining commented lines
+
+au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
+    \ exe "normal g'\"" | endif

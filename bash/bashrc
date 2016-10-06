@@ -43,9 +43,23 @@ function ps1_git {
   echo " … "${ref#refs/heads/}
 }
 
-ps1="\[\e[0;34m\]"                         # colored text
-ps1=$ps1"\u@\h"                            # user@host
-ps1=$ps1" … "
+function upper_aws_creds_name {
+  echo $AWS_CREDS_NAME | tr '[:lower:]' '[:upper:]'
+}
+
+ps1="\[\e[0;34m\]"                         # blue text
+if [[ -n $AWS_CREDS_NAME ]]
+then
+  ps1="$ps1\[\e[0;31m\]"                   # red text
+  ps1=$ps1"AWS@$(upper_aws_creds_name)"    # AWS@INSOPS
+  ps1=$ps1" … "
+  ps1="$ps1\[\e[0;34m\]"                   # blue text
+fi
+if [[ "$_system_name" != "OSX" ]]
+then
+  ps1=$ps1"\u@\h"                          # user@host
+  ps1=$ps1" … "
+fi
 ps1=$ps1"\$(rvm-prompt v)\$(rvm-prompt g)" # 1.9.3@gemset
 ps1=$ps1"\$(ps1_git)"                      # git branch
 ps1=$ps1" … "
