@@ -5,14 +5,12 @@ alias lal='ls -la'
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
+alias cdpg="cd '$(psql -A0tc 'SHOW data_directory')'"
 
 export EDITOR=vim
 export VISUAL=vim
 export LESS="-erX $LESS"
 export GREP_OPTIONS="--exclude=\*.svn\* --exclude=\*.git\* --exclude=\*.rsync_cache\* --exclude=*\.swp"
-
-# https://bosker.wordpress.com/2012/02/12/bash-scripters-beware-of-the-cdpath/
-CDPATH=".:~"
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 export PATH="$HOME/bin:$PATH"
