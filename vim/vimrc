@@ -17,6 +17,8 @@ Plug 'tpope/vim-rails'                  " ruby on rails power tools
 Plug 'vim-ruby/vim-ruby'                " vim/ruby configuration
 Plug 'ydeweerdt/file-line'              " enabling opening a file in a given line
 Plug 'kana/vim-textobj-user'            " create your own text objects
+Plug 'nelstrom/vim-textobj-rubyblock'   " custom text object for selecting ruby blocks
+Plug 'tpope/vim-surround'               " quoting/parenthesizing made simple
 
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
