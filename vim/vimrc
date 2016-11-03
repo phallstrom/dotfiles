@@ -1,5 +1,25 @@
-call pathogen#infect()
-call pathogen#helptags()
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+call plug#begin()
+
+Plug 'airblade/vim-gitgutter'
+Plug 'altercation/vim-colors-solarized'
+Plug 'bundle/nerdtree'
+Plug 'godlygeek/tabular'
+Plug 'janko-m/vim-test'
+Plug 'phallstrom/vim-sailfish'
+Plug 'rking/ag.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'sjl/gundo.vim'
+Plug 'thoughtbot/pick.vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
+Plug 'ydeweerdt/file-line'
+
+call plug#end()
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set t_Co=256
 
