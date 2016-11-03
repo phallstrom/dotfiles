@@ -1,22 +1,21 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin()
 
-Plug 'airblade/vim-gitgutter'
-Plug 'altercation/vim-colors-solarized'
-Plug 'bundle/nerdtree'
-Plug 'godlygeek/tabular'
-Plug 'janko-m/vim-test'
+Plug 'airblade/vim-gitgutter'           " shows a git diff in the gutter
+Plug 'altercation/vim-colors-solarized' " precision colorscheme
+Plug 'godlygeek/tabular'                " text filtering and alignment
+Plug 'janko-m/vim-test'                 " test runner
 Plug 'phallstrom/vim-sailfish'
-Plug 'rking/ag.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'sjl/gundo.vim'
-Plug 'thoughtbot/pick.vim'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rails'
-Plug 'vim-ruby/vim-ruby'
-Plug 'ydeweerdt/file-line'
+Plug 'rking/ag.vim'                     " plugin for the_silver_searcher
+Plug 'scrooloose/nerdtree'              " tree explorer
+Plug 'sjl/gundo.vim'                    " graph your vim undo tree
+Plug 'thoughtbot/pick.vim'              " functions for using pick
+Plug 'tpope/vim-commentary'             " comment stuff out
+Plug 'tpope/vim-endwise'                " wisely add 'end' in ruby, endfunction/endif/more in vim script, etc
+Plug 'tpope/vim-fugitive'               " git wrapper
+Plug 'tpope/vim-rails'                  " ruby on rails power tools
+Plug 'vim-ruby/vim-ruby'                " vim/ruby configuration
+Plug 'ydeweerdt/file-line'              " enabling opening a file in a given line
 
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -24,11 +23,7 @@ call plug#end()
 set t_Co=256
 
 set nocompatible      " We're running Vim, not Vi!
-syntax on             " Enable syntax highlighting
 set synmaxcol=500     " don't try to highlight long lines
-filetype on           " Enable filetype detection
-filetype indent on    " Enable filetype-specific indenting
-filetype plugin on    " Enable filetype-specific plugins
 compiler ruby         " Enable compiler support for ruby
 
 set background=dark
