@@ -19,6 +19,7 @@ Plug 'ydeweerdt/file-line'              " enabling opening a file in a given lin
 Plug 'kana/vim-textobj-user'            " create your own text objects
 Plug 'nelstrom/vim-textobj-rubyblock'   " custom text object for selecting ruby blocks
 Plug 'tpope/vim-surround'               " quoting/parenthesizing made simple
+Plug 'chriskempson/base16-vim'          " color schemes, https://chriskempson.github.io/base16/
 
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -30,7 +31,8 @@ set synmaxcol=500     " don't try to highlight long lines
 compiler ruby         " Enable compiler support for ruby
 
 set background=dark
-colorscheme solarized
+colorscheme base16-oceanicnext
+
 
 set backspace=2
 set expandtab
