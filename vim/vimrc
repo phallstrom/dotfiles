@@ -94,6 +94,9 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 
 let g:omni_sql_no_default_maps = 1 " disable SQL autocompletion entirely
 
+" To ensure that EditorConfig plugin works well with Tim Pope's fugitive
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
 " Syntastic 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -107,8 +110,9 @@ let g:syntastic_loc_list_height = 5          " height of the location list
 let g:syntastic_aggregate_errors = 1         " run all checkers
 let g:syntastic_auto_jump = 0                " don't jump automatically
 
-let g:syntastic_ruby_checkers     = ['rubocop', 'mri']
+let g:syntastic_ruby_checkers     = ['mri', 'rubocop']
 let g:syntastic_ruby_rubocop_exec = 'rubocop'
 
-" To ensure that EditorConfig plugin works well with Tim Pope's fugitive
-let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+if filereadable($HOME."/.vimrc_local")
+  source $HOME/.vimrc_local
+endif
