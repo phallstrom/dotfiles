@@ -21,6 +21,7 @@ Plug 'nelstrom/vim-textobj-rubyblock'   " custom text object for selecting ruby 
 Plug 'tpope/vim-surround'               " quoting/parenthesizing made simple
 Plug 'chriskempson/base16-vim'          " color schemes, https://chriskempson.github.io/base16/
 Plug 'vim-syntastic/syntastic'          " syntax checking hacks for vim
+Plug 'editorconfig/editorconfig-vim'    " EditorConfig plugin for Vim
 
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -93,6 +94,7 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 
 let g:omni_sql_no_default_maps = 1 " disable SQL autocompletion entirely
 
+<<<<<<< 3b34c6981e4536be22638cff49adc8957495a0f9
 " Syntastic 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -108,3 +110,7 @@ let g:syntastic_auto_jump = 0                " don't jump automatically
 
 let g:syntastic_ruby_checkers     = ['rubocop', 'mri']
 let g:syntastic_ruby_rubocop_exec = 'rubocop'
+=======
+" To ensure that EditorConfig plugin works well with Tim Pope's fugitive
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+>>>>>>> add vim editorconfig-vim
