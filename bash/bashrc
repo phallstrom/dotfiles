@@ -70,5 +70,6 @@ alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 alias cdpg="cd '$(psql -A0tc 'SHOW data_directory')'"
+alias dc='docker-compose'
 
 [[ -s "$HOME/.bashrc_local" ]] && source "$HOME/.bashrc_local"
