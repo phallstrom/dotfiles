@@ -24,6 +24,8 @@ Plug 'w0rp/ale'                         " asynchronous lint engine
 Plug 'editorconfig/editorconfig-vim'    " editorConfig plugin
 Plug 'vim-airline/vim-airline'          " status/tabline 
 Plug 'vim-airline/vim-airline-themes'   " status/tabline themes
+Plug 'pangloss/vim-javascript'          " Javascript syntax
+Plug 'mxw/vim-jsx'                      " react jsx syntax
 
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -114,3 +116,5 @@ let g:airline#extensions#whitespace#enabled = 0 " disable detection of whitespac
 if filereadable($HOME."/.vimrc_local")
   source $HOME/.vimrc_local
 endif
+
+let g:jsx_ext_required = 0 " JSX syntax in .js files
