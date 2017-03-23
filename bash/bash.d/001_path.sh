@@ -1,5 +1,0 @@
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
-export PATH="$HOME/bin:$PATH"
-export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
-export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
-export PATH="$PATH:node_modules/.bin"

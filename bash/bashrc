@@ -1,34 +1,3 @@
-export EDITOR=vim
-export VISUAL=vim
-export LESS="-erX $LESS"
-export GREP_OPTIONS="--exclude=\*.svn\* --exclude=\*.git\* --exclude=\*.rsync_cache\* --exclude=*\.swp"
-
 for i in ~/.bash.d/*; do source $i; done
-
-function psg() {
-   ps auxwww | grep -i $1 | grep -v grep
-} 
-
-function cdr {
-  cwd=$PWD
-  while [[ ! -f "$cwd/Rakefile" && ! -f "$cwd/Gemfile" && "$cwd" != "$HOME" ]]
-  do
-    cwd=${cwd%\/*}
-  done
-  cd $cwd
-}
-
-
-PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}\007"'
-
-alias ls='ls -F'
-alias ll='ls -l'
-alias la='ls -a'
-alias lal='ls -la'
-alias rm='rm -i'
-alias mv='mv -i'
-alias cp='cp -i'
-alias cdpg="cd '$(psql -A0tc 'SHOW data_directory')'"
-alias dc='docker-compose'
 
 [[ -s "$HOME/.bashrc_local" ]] && source "$HOME/.bashrc_local"

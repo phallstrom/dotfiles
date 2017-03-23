@@ -33,11 +33,5 @@ PS1=$PS1'\[\e[0m\]\[\e[38;5;4m\]'          # blue on default
 PS1=$PS1''
 PS1=$PS1'\[\e[0m\]'                        # reset color
 PS1=$PS1' '                                # space color
-export PS1
 
-# ps1="\[\e[0;34m\]"                         # blue text
-# if [[ "$_system_name" != "OSX" ]]
-# then
-#   ps1=$ps1"\u@\h"                          # user@host
-# fi
-
+PROMPT_COMMAND='echo -ne "\033]0;${PWD/$HOME/~}\007"'
