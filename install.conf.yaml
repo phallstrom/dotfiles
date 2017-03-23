@@ -6,11 +6,12 @@
 - clean: ['~']
 
 - link:
-    ~/Library/Fonts/Monaco\ for\ Powerline.otf: fonts/Monaco\ for\ Powerline.otf
     ~/.bash_completion: bash/bash_completion
     ~/.bash_profile: bash/bash_profile
     ~/.bashrc: bash/bashrc
     ~/.vim: vim
     ~/.vimrc: vim/vimrc
 
-- shell: []
+- shell:
+  - [cp -f fonts/Monaco\ for\ Powerline.otf ~/Library/Fonts/Monaco\ for\ Powerline.otf,
+    "Installing font 'Monaco for Powerline'"]
