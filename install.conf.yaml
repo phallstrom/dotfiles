@@ -6,6 +6,7 @@
 - clean: ['~']
 
 - link:
+    ~/Library/Fonts/Monaco\ for\ Powerline.otf: fonts/Monaco\ for\ Powerline.otf
     ~/.bash_completion: bash/bash_completion
     ~/.bash_profile: bash/bash_profile
     ~/.bashrc: bash/bashrc
