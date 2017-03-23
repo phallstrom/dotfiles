@@ -4,36 +4,35 @@ function ps1_git {
   echo " ${ref#refs/heads/} "
 }
 
-function ps1_upper_aws_creds_name {
-  echo $AWS_CREDS_NAME | tr '[:lower:]' '[:upper:]'
+function ps1_aws {
+  [[ -n $AWS_CREDS_NAME ]] || return
+  ps1=""
+  ps1=$ps1'\[\e[38;5;15;48;5;1m\]'            # white on red
+  ps1=$ps1" AWS@$(echo $AWS_CREDS_NAME | tr '[:lower:]' '[:upper:]') " # AWS@INSOPS
+  echo "$ps1"
 }
 
 PS1=''
-if [[ -n $AWS_CREDS_NAME ]]
-then
-  PS1=$PS1'\[\e[0;31m\]'                      # red text
-  PS1=$PS1'\[\e[38;5;15;48;5;1m\]'            # white on red
-  PS1=$PS1' AWS@$(ps1_upper_aws_creds_name) ' # AWS@INSOPS
-  # PS1=$PS1'\[\e[38;5;1;48;5;4m\]'             # red on blue
-  # PS1=$PS1''
-fi
-PS1=$PS1'\[\e[38;5;15;48;5;4m\]'              # white on blue
-PS1=$PS1' $(rvm-prompt v)$(rvm-prompt g) '    # ruby@gemset
-PS1=$PS1'\[\e[38;5;4;48;5;15m\]'              # blue on white
+PS1=$PS1$(ps1_aws)                         # AWS@INSOPS
+PS1=$PS1'\[\e[38;5;15;48;5;4m\]'           # white on blue
+PS1=$PS1' $(rvm-prompt v)$(rvm-prompt g) ' # ruby@gemset
+PS1=$PS1'\[\e[38;5;4;48;5;2m\]'            # blue on green
 PS1=$PS1''
-PS1=$PS1'$(ps1_git)'                          # git branch
-PS1=$PS1'\[\e[38;5;15;48;5;4m\]'              # white on blue
+PS1=$PS1'\[\e[38;5;15;48;5;2m\]'           # white on green
+PS1=$PS1'$(ps1_git)'                       # git branch
+PS1=$PS1'\[\e[38;5;2;48;5;4m\]'            # green on blue
 PS1=$PS1''
-PS1=$PS1' \w '                                # relative working directory
-PS1=$PS1'\[\e[0m\]\[\e[38;5;4m\]'             # blue on default
+PS1=$PS1'\[\e[38;5;15;48;5;4m\]'           # white on blue
+PS1=$PS1' \w '                             # relative working directory
+PS1=$PS1'\[\e[0m\]\[\e[38;5;4m\]'          # blue on default
 PS1=$PS1''
-PS1=$PS1'\n'                                  # newline
-PS1=$PS1'\[\e[38;5;15;48;5;4m\]'              # white on blue
-PS1=$PS1' \$'                                 # $
-PS1=$PS1'\[\e[0m\]\[\e[38;5;4m\]'             # blue on default
+PS1=$PS1'\n'                               # newline
+PS1=$PS1'\[\e[38;5;15;48;5;4m\]'           # white on blue
+PS1=$PS1' \$'                              # $
+PS1=$PS1'\[\e[0m\]\[\e[38;5;4m\]'          # blue on default
 PS1=$PS1''
-PS1=$PS1'\[\e[0m\]'                           # reset color
-PS1=$PS1' '                                   # space color
+PS1=$PS1'\[\e[0m\]'                        # reset color
+PS1=$PS1' '                                # space color
 export PS1
 
 # ps1="\[\e[0;34m\]"                         # blue text
