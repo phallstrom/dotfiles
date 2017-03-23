@@ -110,6 +110,7 @@ let g:ale_lint_delay = 200         " millisecond delay before checking
 let g:airline_theme = 'base16'                  " theme
 set laststatus=2                                " always show airline
 set noshowmode                                  " hide default mode indicator
+let g:airline_powerline_fonts = 1               " use powerline font
 let g:airline#extensions#wordcount#enabled = 0  " disable word counting
 let g:airline#extensions#whitespace#enabled = 0 " disable detection of whitespace errors
 
