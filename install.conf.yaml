@@ -7,6 +7,7 @@
 
 - link:
     ~/.bash_completion: bash/bash_completion
+    ~/.bash.d: bash/bash.d
     ~/.bash_profile: bash/bash_profile
     ~/.bashrc: bash/bashrc
     ~/.vim: vim

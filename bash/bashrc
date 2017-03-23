@@ -3,14 +3,7 @@ export VISUAL=vim
 export LESS="-erX $LESS"
 export GREP_OPTIONS="--exclude=\*.svn\* --exclude=\*.git\* --exclude=\*.rsync_cache\* --exclude=*\.swp"
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
-export PATH="$HOME/bin:$PATH"
-export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
-export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
-export PATH="$HOME/.rvm/bin:$PATH"
-export PATH="$PATH:node_modules/.bin"
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+for i in ~/.bash.d/*; do source $i; done
 
 function psg() {
    ps auxwww | grep -i $1 | grep -v grep
@@ -25,40 +18,6 @@ function cdr {
   cd $cwd
 }
 
-# If we're in a git repository return the branch name,
-# otherwise nothing.  We include the '...' here so it isn't
-# duplicated in the output
-function ps1_git {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  echo " … "${ref#refs/heads/}
-}
-
-function upper_aws_creds_name {
-  echo $AWS_CREDS_NAME | tr '[:lower:]' '[:upper:]'
-}
-
-ps1="\[\e[0;34m\]"                         # blue text
-if [[ -n $AWS_CREDS_NAME ]]
-then
-  ps1="$ps1\[\e[0;31m\]"                   # red text
-  ps1=$ps1"AWS@$(upper_aws_creds_name)"    # AWS@INSOPS
-  ps1=$ps1" … "
-  ps1="$ps1\[\e[0;34m\]"                   # blue text
-fi
-if [[ "$_system_name" != "OSX" ]]
-then
-  ps1=$ps1"\u@\h"                          # user@host
-  ps1=$ps1" … "
-fi
-ps1=$ps1"\$(rvm-prompt v)\$(rvm-prompt g)" # 1.9.3@gemset
-ps1=$ps1"\$(ps1_git)"                      # git branch
-ps1=$ps1" … "
-ps1=$ps1"\w"                               # relative working dir
-ps1=$ps1"\\n"                              # new line
-ps1=$ps1"\$"                               # $
-ps1=$ps1" "                                # space
-ps1=$ps1"\[\e[0m\]"                        # reset color
-export PS1=$ps1
 
 PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}\007"'
 
