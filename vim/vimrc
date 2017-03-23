@@ -1,4 +1,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:plug_shallow = 0 " disable shallow cloning
+
 call plug#begin()
 
 Plug 'airblade/vim-gitgutter'           " shows a git diff in the gutter
