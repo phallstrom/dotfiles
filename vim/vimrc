@@ -3,31 +3,32 @@ let g:plug_shallow = 0 " disable shallow cloning
 
 call plug#begin()
 
-Plug 'airblade/vim-gitgutter'           " shows a git diff in the gutter
-Plug 'altercation/vim-colors-solarized' " precision colorscheme
-Plug 'godlygeek/tabular'                " text filtering and alignment
-Plug 'janko-m/vim-test'                 " test runner
+Plug 'airblade/vim-gitgutter'                 " shows a git diff in the gutter
+Plug 'altercation/vim-colors-solarized'       " precision colorscheme
+Plug 'godlygeek/tabular'                      " text filtering and alignment
+Plug 'janko-m/vim-test'                       " test runner
 Plug 'phallstrom/vim-sailfish'
-Plug 'rking/ag.vim'                     " plugin for the_silver_searcher
-Plug 'scrooloose/nerdtree'              " tree explorer
-Plug 'sjl/gundo.vim'                    " graph your vim undo tree
-Plug 'thoughtbot/pick.vim'              " functions for using pick
-Plug 'tpope/vim-commentary'             " comment stuff out
-Plug 'tpope/vim-endwise'                " wisely add 'end' in ruby, endfunction/endif/more in vim script, etc
-Plug 'tpope/vim-fugitive'               " git wrapper
-Plug 'tpope/vim-rails'                  " ruby on rails power tools
-Plug 'vim-ruby/vim-ruby'                " vim/ruby configuration
-Plug 'ydeweerdt/file-line'              " enabling opening a file in a given line
-Plug 'kana/vim-textobj-user'            " create your own text objects
-Plug 'nelstrom/vim-textobj-rubyblock'   " custom text object for selecting ruby blocks
-Plug 'tpope/vim-surround'               " quoting/parenthesizing made simple
-Plug 'chriskempson/base16-vim'          " color schemes, https://chriskempson.github.io/base16/
-Plug 'w0rp/ale'                         " asynchronous lint engine
-Plug 'editorconfig/editorconfig-vim'    " editorConfig plugin
-Plug 'vim-airline/vim-airline'          " status/tabline 
-Plug 'vim-airline/vim-airline-themes'   " status/tabline themes
-Plug 'pangloss/vim-javascript'          " Javascript syntax
-Plug 'mxw/vim-jsx'                      " react jsx syntax
+Plug 'rking/ag.vim'                           " plugin for the_silver_searcher
+Plug 'scrooloose/nerdtree'                    " tree explorer
+Plug 'sjl/gundo.vim'                          " graph your vim undo tree
+Plug 'thoughtbot/pick.vim'                    " functions for using pick
+Plug 'tpope/vim-commentary'                   " comment stuff out
+Plug 'tpope/vim-endwise'                      " wisely add 'end' in ruby, endfunction/endif/more in vim script, etc
+Plug 'tpope/vim-fugitive'                     " git wrapper
+Plug 'tpope/vim-rails', { 'for': ['ruby'] }   " ruby on rails power tools
+Plug 'vim-ruby/vim-ruby', { 'for': ['ruby'] } " vim/ruby configuration
+Plug 'tpope/vim-projectionist'                " project configuration (file jumping)
+Plug 'ydeweerdt/file-line'                    " enabling opening a file in a given line
+Plug 'kana/vim-textobj-user'                  " create your own text objects
+Plug 'nelstrom/vim-textobj-rubyblock'         " custom text object for selecting ruby blocks
+Plug 'tpope/vim-surround'                     " quoting/parenthesizing made simple
+Plug 'chriskempson/base16-vim'                " color schemes, https://chriskempson.github.io/base16/
+Plug 'w0rp/ale'                               " asynchronous lint engine
+Plug 'editorconfig/editorconfig-vim'          " editorConfig plugin
+Plug 'vim-airline/vim-airline'                " status/tabline
+Plug 'vim-airline/vim-airline-themes'         " status/tabline themes
+Plug 'pangloss/vim-javascript'                " Javascript syntax
+Plug 'mxw/vim-jsx'                            " react jsx syntax
 
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -121,3 +122,5 @@ if filereadable($HOME."/.vimrc_local")
 endif
 
 let g:jsx_ext_required = 0 " JSX syntax in .js files
+
+:nnoremap <C-W>f :vertical wincmd f<CR> " open file splits in vsplit by default
