@@ -29,6 +29,7 @@ Plug 'vim-airline/vim-airline'                " status/tabline
 Plug 'vim-airline/vim-airline-themes'         " status/tabline themes
 Plug 'pangloss/vim-javascript'                " Javascript syntax
 Plug 'mxw/vim-jsx'                            " react jsx syntax
+Plug 'posva/vim-vue', { 'for': ['vue'] }      " Vue.js syntax
 
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -51,8 +52,6 @@ set nrformats=
 
 set backupdir=$HOME/.vimbackup,.
 set directory=$HOME/.vimswap,.
-
-syntax on
 
 au FocusLost * :wa
 
@@ -123,4 +122,9 @@ endif
 
 let g:jsx_ext_required = 0 " JSX syntax in .js files
 
-:nnoremap <C-W>f :vertical wincmd f<CR> " open file splits in vsplit by default
+" open file splits in vsplit by default
+:nnoremap <C-W>f :vertical wincmd f<CR> 
+
+" https://github.com/posva/vim-vue#how-can-i-use-existing-configurationplugins-in-vue-files
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
+
