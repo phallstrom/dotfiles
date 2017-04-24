@@ -8,10 +8,8 @@ Plug 'altercation/vim-colors-solarized'       " precision colorscheme
 Plug 'godlygeek/tabular'                      " text filtering and alignment
 Plug 'janko-m/vim-test'                       " test runner
 Plug 'phallstrom/vim-sailfish'
-Plug 'rking/ag.vim'                           " plugin for the_silver_searcher
 Plug 'scrooloose/nerdtree'                    " tree explorer
 Plug 'sjl/gundo.vim'                          " graph your vim undo tree
-Plug 'thoughtbot/pick.vim'                    " functions for using pick
 Plug 'tpope/vim-commentary'                   " comment stuff out
 Plug 'tpope/vim-endwise'                      " wisely add 'end' in ruby, endfunction/endif/more in vim script, etc
 Plug 'tpope/vim-fugitive'                     " git wrapper
@@ -30,6 +28,7 @@ Plug 'vim-airline/vim-airline-themes'         " status/tabline themes
 Plug 'pangloss/vim-javascript'                " Javascript syntax
 Plug 'mxw/vim-jsx'                            " react jsx syntax
 Plug 'posva/vim-vue', { 'for': ['vue'] }      " Vue.js syntax
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim' " A command-line fuzzy finder written in Go
 
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -66,19 +65,13 @@ nnoremap <leader>nt :NERDTreeToggle<enter>
 
 source $VIMRUNTIME/macros/matchit.vim
 
-nnoremap <C-p> :call PickFile()<CR>
-let g:pick_executable = "pick"
-" nnoremap <Leader>p :call PickFile()<CR>
-" nnoremap <Leader>s :call PickFileSplit()<CR>
-" nnoremap <Leader>v :call PickFileVerticalSplit()<CR>
-" nnoremap <Leader>t :call PickFileTab()<CR>
-nnoremap <Leader>b :call PickBuffer()<CR>
+" fzf
+nnoremap <silent> <C-p> :Files<CR>
+nnoremap <silent> <Leader>b :Buffers<CR>
 
 " https://github.com/tpope/vim-commentary/commit/4dcfc318e0b02fdbb0c2d9ff77cf3562b46eea25
 xmap \\  <Plug>Commentary
 nmap \\  <Plug>Commentary
-
-let g:ag_working_path_mode="r"
 
 set updatetime=250
 
