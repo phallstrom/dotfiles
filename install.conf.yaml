@@ -12,6 +12,7 @@
     ~/.bashrc: bash/bashrc
     ~/.vim: vim
     ~/.vimrc: vim/vimrc
+    ~/.tmux.conf: other/tmux.conf
 
 - shell:
   - [cp -f fonts/Monaco\ for\ Powerline.otf ~/Library/Fonts/Monaco\ for\ Powerline.otf,
