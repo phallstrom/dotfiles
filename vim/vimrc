@@ -30,6 +30,7 @@ Plug 'mxw/vim-jsx'                            " react jsx syntax
 Plug 'posva/vim-vue', { 'for': ['vue'] }      " Vue.js syntax
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim' " A command-line fuzzy finder written in Go
 Plug 'kien/rainbow_parentheses.vim', { 'for': ['clojure'] } " Better Rainbow Parentheses
+Plug 'guns/vim-clojure-static', { 'for': ['clojure'] } " Meikel Brandmeyer's excellent Clojure runtime files
 
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
