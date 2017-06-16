@@ -29,6 +29,7 @@ Plug 'pangloss/vim-javascript'                " Javascript syntax
 Plug 'mxw/vim-jsx'                            " react jsx syntax
 Plug 'posva/vim-vue', { 'for': ['vue'] }      " Vue.js syntax
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim' " A command-line fuzzy finder written in Go
+Plug 'kien/rainbow_parentheses.vim', { 'for': ['clojure'] } " Better Rainbow Parentheses
 
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -121,3 +122,4 @@ let g:jsx_ext_required = 0 " JSX syntax in .js files
 " https://github.com/posva/vim-vue#how-can-i-use-existing-configurationplugins-in-vue-files
 " autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 
+au FileType clojure exe "RainbowParenthesesLoadRound" | RainbowParenthesesActivate
