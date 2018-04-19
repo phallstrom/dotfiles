@@ -34,6 +34,7 @@ Plug 'guns/vim-clojure-static', { 'for': ['clojure'] } " Meikel Brandmeyer's exc
 Plug 'tpope/vim-unimpaired'                   " pairs of handy bracket mappings
 Plug 'tpope/vim-abolish'                      " easily search for, substitute, and abbreviate multiple variants of a word
 Plug 'mechatroner/rainbow_csv'                " highlighting columns in csv/tsv files
+Plug 'slim-template/vim-slim' " slim syntax highlighting for vim
 
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -131,3 +132,6 @@ au FileType clojure exe "RainbowParenthesesLoadRound" | RainbowParenthesesActiva
 " open NERDTree automatically when vim starts up on opening a directory
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
+" https://github.com/slim-template/vim-slim/issues/38#issuecomment-23760100
+autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
