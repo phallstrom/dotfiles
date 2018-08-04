@@ -45,6 +45,8 @@ set nocompatible      " We're running Vim, not Vi!
 set synmaxcol=500     " don't try to highlight long lines
 compiler ruby         " Enable compiler support for ruby
 
+filetype plugin on
+
 set background=dark
 colorscheme base16-oceanicnext
 
