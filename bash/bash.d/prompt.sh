@@ -5,10 +5,10 @@ function ps1_git {
 }
 
 function ps1_aws {
-  [[ -n $AWS_CREDS_NAME ]] || return
+  [[ -n $VAULTED_ENV ]] || return
   ps1=""
   ps1=$ps1'\[\e[38;5;15;48;5;1m\]'            # white on red
-  ps1=$ps1" AWS@$(echo $AWS_CREDS_NAME | tr '[:lower:]' '[:upper:]') " # AWS@INSOPS
+  ps1=$ps1" AWS@$(echo $VAULTED_ENV | tr '[:lower:]' '[:upper:]') " # AWS@INSOPS
   echo "$ps1"
 }
 
