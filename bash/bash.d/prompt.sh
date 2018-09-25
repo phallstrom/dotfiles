@@ -12,10 +12,15 @@ function ps1_aws {
   echo "$ps1"
 }
 
+function ps1_ruby {
+  [[ -n $RBENV_SHELL ]] || return
+  rbenv version-name
+}
+
 PS1=''
 PS1=$PS1$(ps1_aws)                         # AWS@INSOPS
 PS1=$PS1'\[\e[38;5;15;48;5;4m\]'           # white on blue
-PS1=$PS1' $(rvm-prompt v)$(rvm-prompt g) ' # ruby@gemset
+PS1=$PS1' $(ps1_ruby) '                    # ruby
 PS1=$PS1'\[\e[38;5;4;48;5;2m\]'            # blue on green
 PS1=$PS1''
 PS1=$PS1'\[\e[38;5;15;48;5;2m\]'           # white on green
