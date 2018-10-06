@@ -1,9 +1,18 @@
+require "socket"
+
 tap "homebrew/bundle"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 
 cask "dropbox"
-cask "iterm2"
+
+if ["Philips-MBP"].include?(Socket.gethostname)
+  cask "iterm2-beta"
+  cask "virtualbox"
+else
+  cask "iterm2"
+end
+
 cask "spotify"
 cask "superduper"
 
@@ -20,8 +29,12 @@ brew "tmux"
 brew "vim"
 
 mas "1Blocker", id: 1107421413
-mas "Amphetamine", id: 937984704
-mas "GarageBand", id: 682658836
+mas "Caffeine", id: 411246225
+
+unless ["Philips-MBP"].include?(Socket.gethostname)
+  mas "GarageBand", id: 682658836
+end
+
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Magnet", id: 441258766
