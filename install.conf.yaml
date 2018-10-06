@@ -12,6 +12,8 @@
     ~/.bashrc: bash/bashrc
     ~/.vim: vim
     ~/.vimrc: vim/vimrc
+    ~/.gitconfig: git/config
+    ~/.gitignore: git/ignore
     ~/.tmux.conf: other/tmux.conf
 
 - shell:

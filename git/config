@@ -1,3 +1,27 @@
 [user]
-	email = philip@pjkh.com
-	name = Philip Hallstrom
+  name = Philip Hallstrom
+  email = philip@pjkh.com
+[alias]
+  co = checkout
+  st = status
+  ci = commit
+  br = branch
+  retcon = commit --amend
+[color]
+  status = auto
+  branch = auto
+  diff = auto
+[core]
+  excludesfile = ~/.gitignore
+[push]
+  default = matching
+[pull]
+  default = matching
+[branch]
+  autosetuprebase = always
+[filter "lfs"]
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
+[include]
+  path = ~/.gitconfig_local
