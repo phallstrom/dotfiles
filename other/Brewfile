@@ -17,10 +17,8 @@ cask "superduper"
 # Billings.app
 # Dash.app
 # Docker.app
-# Dropbox.app
 # ExpanDrive (5.1.6.0).app
 # Flow.app
-# Flux.app
 # Font Book.app
 # GitHub Desktop.app
 # GitX.app
@@ -73,6 +71,7 @@ if ["Philips-MBP"].include?(Socket.gethostname)
   brew "leiningen"
   brew "redis", restart_service: true
   brew "roundup"
+  cask "flux"
   cask "alfred"
   cask "dash"
   cask "iterm2-beta"
