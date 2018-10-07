@@ -1,0 +1,88 @@
+require "socket"
+
+tap "homebrew/bundle"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+
+cask "arq"
+cask "appzapper"
+cask "dropbox"
+cask "spotify"
+cask "superduper"
+
+# 1Password 6.app
+# A Better Finder Rename 9.app
+# Amazon Music.app
+# Audacity
+# Billings.app
+# Dash.app
+# Docker.app
+# Dropbox.app
+# ExpanDrive (5.1.6.0).app
+# Flow.app
+# Flux.app
+# Font Book.app
+# GitHub Desktop.app
+# GitX.app
+# Google Chrome.app
+# Google Drive.app
+# Live Interior 3D Pro.app
+# MacDown.app
+# Max.app
+# MoneyWell.app
+# MoneyWorks Express.app
+# OmniGraffle.app
+# Piezo.app
+# Postgres.app
+# PowerPhotos.app
+# Sketch Toolbox.app
+# Sketch.app
+# SketchUp 2017
+# Skype.app
+# The Unarchiver.app
+
+brew "coreutils"
+brew "fzf"
+brew "git"
+brew "htop"
+brew "imagemagick"
+brew "jq"
+brew "jsonpp"
+brew "mas"
+brew "mmv"
+brew "rbenv"
+brew "rbenv-aliases"
+brew "ruby-build"
+brew "the_silver_searcher"
+brew "tmux"
+brew "vim", args: ["without-python"]
+
+mas "1Blocker", id: 1107421413
+mas "Caffeine", id: 411246225
+mas "Cascadea", id: 1432182561
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "Magnet", id: 441258766
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Pixelmator", id: 407963104
+mas "Slack", id: 803453959
+mas "Xcode", id: 497799835
+
+if ["Philips-MBP"].include?(Socket.gethostname)
+  brew "leiningen"
+  brew "redis", restart_service: true
+  brew "roundup"
+  cask "alfred"
+  cask "dash"
+  cask "iterm2-beta"
+  cask "qlcolorcode"
+  cask "qlmarkdown"
+  cask "qlstephen"
+  cask "quicklook-json"
+  cask "virtualbox"
+else
+  cask "iterm2"
+  mas "GarageBand", id: 682658836
+end
+

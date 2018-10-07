@@ -20,6 +20,7 @@
     ~/.tmux.conf: other/tmux.conf
     ~/.agignore: other/agignore
     ~/.psqlrc: other/psqlrc
+    ~/.Brewfile: other/Brewfile
 
 - shell:
   - [cp -f fonts/Monaco\ for\ Powerline.otf ~/Library/Fonts/Monaco\ for\ Powerline.otf,
