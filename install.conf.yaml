@@ -16,8 +16,10 @@
     ~/.gitignore: git/ignore
     ~/.irbrc: ruby/irbrc
     ~/.pryrc: ruby/pryrc
+    ~/.rspec: ruby/rspec
     ~/.tmux.conf: other/tmux.conf
     ~/.agignore: other/agignore
+    ~/.psqlrc: other/psqlrc
 
 - shell:
   - [cp -f fonts/Monaco\ for\ Powerline.otf ~/Library/Fonts/Monaco\ for\ Powerline.otf,
