@@ -14,7 +14,10 @@
     ~/.vimrc: vim/vimrc
     ~/.gitconfig: git/config
     ~/.gitignore: git/ignore
+    ~/.irbrc: ruby/irbrc
+    ~/.pryrc: ruby/pryrc
     ~/.tmux.conf: other/tmux.conf
+    ~/.agignore: other/agignore
 
 - shell:
   - [cp -f fonts/Monaco\ for\ Powerline.otf ~/Library/Fonts/Monaco\ for\ Powerline.otf,
