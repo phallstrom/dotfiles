@@ -1,18 +1,22 @@
 [user]
   name = Philip Hallstrom
   email = philip@pjkh.com
+[core]
+  excludesfile = ~/.gitignore
+  trustctime = false
 [alias]
   co = checkout
   st = status
   ci = commit
   br = branch
   retcon = commit --amend
+  rc = commit --amend --no-edit
+  ps-changes = diff HEAD~1 --name-only
+  changelog = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [color]
   status = auto
   branch = auto
   diff = auto
-[core]
-  excludesfile = ~/.gitignore
 [push]
   default = matching
 [pull]
@@ -22,6 +26,7 @@
 [filter "lfs"]
   clean = git-lfs clean %f
   smudge = git-lfs smudge %f
+  process = git-lfs filter-process
   required = true
 [include]
   path = ~/.gitconfig_local

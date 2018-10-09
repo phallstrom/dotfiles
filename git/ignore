@@ -1,8 +1,9 @@
-doc/tags
-*.swp
 *.swo
-.DS_Store\?
+*.swp
 .DS_Store
+.DS_Store\?
+.netrwhist
 Icon\?
 Thumbs.db
+doc/tags
 vendor/cache
