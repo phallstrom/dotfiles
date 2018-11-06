@@ -129,6 +129,26 @@ let g:jsx_ext_required = 0 " JSX syntax in .js files
 " https://github.com/posva/vim-vue#how-can-i-use-existing-configurationplugins-in-vue-files
 " autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 
+" rainbow parantheses: remove black from the default set of colors as it's
+" impossible to see on dark backgrounds
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'SeaGreen3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+
 au FileType clojure exe "RainbowParenthesesLoadRound" | RainbowParenthesesActivate
 
 " open NERDTree automatically when vim starts up on opening a directory
@@ -137,3 +157,4 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 
 " https://github.com/slim-template/vim-slim/issues/38#issuecomment-23760100
 autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
+
