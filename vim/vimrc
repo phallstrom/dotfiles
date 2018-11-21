@@ -29,12 +29,15 @@ Plug 'pangloss/vim-javascript'                " Javascript syntax
 Plug 'mxw/vim-jsx'                            " react jsx syntax
 Plug 'posva/vim-vue', { 'for': ['vue'] }      " Vue.js syntax
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim' " A command-line fuzzy finder written in Go
-Plug 'kien/rainbow_parentheses.vim', { 'for': ['clojure'] } " Better Rainbow Parentheses
-Plug 'guns/vim-clojure-static', { 'for': ['clojure'] } " Meikel Brandmeyer's excellent Clojure runtime files
 Plug 'tpope/vim-unimpaired'                   " pairs of handy bracket mappings
 Plug 'tpope/vim-abolish'                      " easily search for, substitute, and abbreviate multiple variants of a word
 Plug 'mechatroner/rainbow_csv'                " highlighting columns in csv/tsv files
 Plug 'slim-template/vim-slim' " slim syntax highlighting for vim
+
+Plug 'kien/rainbow_parentheses.vim', { 'for': ['clojure'] } " Better Rainbow Parentheses
+Plug 'guns/vim-clojure-static',      { 'for': ['clojure'] } " Meikel Brandmeyer's excellent Clojure runtime files
+Plug 'tpope/vim-fireplace',          { 'for': ['clojure'] } " Clojure REPL support
+Plug 'kovisoft/paredit',             { 'for': ['clojure'] } " Structured Editing of Lisp S-expres
 
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -157,4 +160,3 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 
 " https://github.com/slim-template/vim-slim/issues/38#issuecomment-23760100
 autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
-
