@@ -33,6 +33,7 @@ Plug 'tpope/vim-unimpaired'                   " pairs of handy bracket mappings
 Plug 'tpope/vim-abolish'                      " easily search for, substitute, and abbreviate multiple variants of a word
 Plug 'mechatroner/rainbow_csv'                " highlighting columns in csv/tsv files
 Plug 'slim-template/vim-slim' " slim syntax highlighting for vim
+Plug 'martinda/jenkinsfile-vim-syntax'        " Jenkinsfile DSL vim syntax
 
 Plug 'kien/rainbow_parentheses.vim', { 'for': ['clojure'] } " Better Rainbow Parentheses
 Plug 'guns/vim-clojure-static',      { 'for': ['clojure'] } " Meikel Brandmeyer's excellent Clojure runtime files
