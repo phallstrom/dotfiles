@@ -155,6 +155,15 @@ let g:rbpt_colorpairs = [
 
 au FileType clojure exe "RainbowParenthesesLoadRound" | RainbowParenthesesActivate
 
+" all subforms are aligned to the same column
+" see: https://github.com/guns/vim-clojure-static#gclojure_align_subforms
+let g:clojure_align_subforms=1
+
+" align subsequent lines in multiline strings to the column after the opening
+" quote, instead of the same column.
+" see: https://github.com/guns/vim-clojure-static#gclojure_align_multiline_strings
+let g:clojure_align_multiline_strings=1
+
 " open NERDTree automatically when vim starts up on opening a directory
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
