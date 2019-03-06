@@ -1,25 +1,32 @@
 require "socket"
 
+tap "homebrew/boneyard"
 tap "homebrew/bundle"
+tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
+tap "homebrew/services"
+tap "homebrew/versions"
 
-cask "arq"
+cask "1password"
 cask "appzapper"
+cask "arq"
 cask "dropbox"
+cask "macdown"
+cask "qlcolorcode"
+cask "qlmarkdown"
+cask "qlprettypatch"
+cask "qlstephen"
+cask "quicklook-json"
 cask "spotify"
 cask "superduper"
+cask "the-unarchiver"
 
-# 1Password 6.app
-# Audacity
-# Billings.app
-# MoneyWell.app
-# MoneyWorks Express.app
-# SketchUp 2017
-
+brew "colordiff"
 brew "coreutils"
 brew "fzf"
 brew "git"
+brew "gnu-sed", args: ["with-default-names"]
 brew "htop"
 brew "imagemagick"
 brew "jq"
@@ -28,15 +35,18 @@ brew "mas"
 brew "mmv"
 brew "rbenv"
 brew "rbenv-aliases"
+brew "rbenv-default-gems"
 brew "ruby-build"
 brew "the_silver_searcher"
 brew "tmux"
 brew "vim", args: ["without-python"]
+brew "wget"
 
 mas "1Blocker", id: 1107421413
 mas "Caffeine", id: 411246225
 mas "Cascadea", id: 1432182561
-mas "iMovie", id: 408981434
+mas "GIF Brewery 3", id: 1081413713
+mas "GIPHY CAPTURE", id: 668208984
 mas "Keynote", id: 409183694
 mas "Magnet", id: 441258766
 mas "Numbers", id: 409203825
@@ -44,28 +54,47 @@ mas "Pages", id: 409201541
 mas "Pixelmator", id: 407963104
 mas "Slack", id: 803453959
 mas "Xcode", id: 497799835
+mas "iMazing HEIC Converter", id: 1292198261
+mas "iMovie", id: 408981434
 
-if ["Philips-MBP"].include?(Socket.gethostname)
+if ["phallstrom-l.corp.instructure.com", "phallstrom-l2.corp.instructure.com", "Philips-MBP"].include?(Socket.gethostname)
+  brew "clojure"
   brew "leiningen"
+  brew "libsass"
+  brew "libxml2"
+  brew "libxmlsec1"
+  brew "node@8"
   brew "redis", restart_service: true
-  brew "roundup"
-  cask "flux"
+  brew "rbspy"
   cask "alfred"
+  cask "chromedriver"
   cask "dash"
   cask "docker"
+  cask "flux"
   cask "iterm2-beta"
-  cask "macdown"
-  cask "max"
-  cask "piezo"
   cask "postgres"
-  cask "powerphotos"
-  cask "qlcolorcode"
-  cask "qlmarkdown"
-  cask "qlstephen"
-  cask "quicklook-json"
   cask "virtualbox"
 else
   cask "iterm2"
+  cask "superduper"
   mas "GarageBand", id: 682658836
 end
 
+if ["Philips-MBP"].include?(Socket.gethostname)
+  brew "roundup"
+  cask "max"
+  cask "piezo"
+  cask "powerphotos"
+end
+
+if ["phallstrom-l.corp.instructure.com", "phallstrom-l2.corp.instructure.com"].include?(Socket.gethostname)
+  tap "codekitchen/dinghy"
+  brew "ansible"
+  brew "awscli"
+  brew "codekitchen/dinghy/unfs3"
+  brew "consul", restart_service: true
+  brew "openconnect"
+  brew "vault"
+  brew "vaulted"
+  brew "xhyve"
+end
