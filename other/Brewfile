@@ -42,7 +42,7 @@ brew "vim", args: ["without-python"]
 brew "wget"
 
 mas "1Blocker", id: 1107421413
-mas "Caffeine", id: 411246225
+mas "Amphetamine", id: 937984704
 mas "Cascadea", id: 1432182561
 mas "GIF Brewery 3", id: 1081413713
 mas "GIPHY CAPTURE", id: 668208984
