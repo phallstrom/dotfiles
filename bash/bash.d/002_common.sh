@@ -18,4 +18,3 @@ alias lal='ls -la'
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
-alias cdpg="cd '$(psql -A0tc 'SHOW data_directory')'"
