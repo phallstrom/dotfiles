@@ -20,7 +20,8 @@ Plug 'tpope/vim-projectionist'                " project configuration (file jump
 Plug 'kana/vim-textobj-user'                  " create your own text objects
 Plug 'nelstrom/vim-textobj-rubyblock'         " custom text object for selecting ruby blocks
 Plug 'tpope/vim-surround'                     " quoting/parenthesizing made simple
-Plug 'chriskempson/base16-vim'                " color schemes, https://chriskempson.github.io/base16/
+" Plug 'chriskempson/base16-vim'                " color schemes, https://chriskempson.github.io/base16/
+Plug 'danielwe/base16-vim'                " color schemes, https://chriskempson.github.io/base16/
 Plug 'w0rp/ale'                               " asynchronous lint engine
 Plug 'editorconfig/editorconfig-vim'          " editorConfig plugin
 Plug 'vim-airline/vim-airline'                " status/tabline
