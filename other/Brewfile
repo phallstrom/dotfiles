@@ -55,7 +55,7 @@ mas "Xcode", id: 497799835
 mas "iMazing HEIC Converter", id: 1292198261
 mas "iMovie", id: 408981434
 
-if ["phallstrom-l.corp.instructure.com", "phallstrom-l2.corp.instructure.com", "Philips-MBP"].include?(Socket.gethostname)
+if ["phallstrom-l2.corp.instructure.com", "Philips-MBP"].include?(Socket.gethostname)
   cask "java" 
   brew "clojure"
   brew "leiningen"
@@ -63,7 +63,7 @@ if ["phallstrom-l.corp.instructure.com", "phallstrom-l2.corp.instructure.com", "
   brew "libxml2"
   brew "libxmlsec1"
   brew "node@8"
-  brew "redis", restart_service: true
+  brew "redis"
   brew "rbspy"
   cask "alfred"
   cask "chromedriver"
@@ -86,12 +86,11 @@ if ["Philips-MBP"].include?(Socket.gethostname)
   cask "powerphotos"
 end
 
-if ["phallstrom-l.corp.instructure.com", "phallstrom-l2.corp.instructure.com"].include?(Socket.gethostname)
+if ["phallstrom-l2.corp.instructure.com"].include?(Socket.gethostname)
   tap "codekitchen/dinghy"
   brew "ansible"
   brew "awscli"
   brew "codekitchen/dinghy/unfs3"
-  brew "consul", restart_service: true
   brew "openconnect"
   brew "vault"
   brew "vaulted"
