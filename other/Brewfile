@@ -57,6 +57,8 @@ mas "iMovie", id: 408981434
 
 if ["phallstrom-l2.corp.instructure.com", "Philips-MBP"].include?(Socket.gethostname)
   cask "java" 
+  brew "bash"
+  brew "bash-completion@2"
   brew "clojure"
   brew "leiningen"
   brew "libsass"
@@ -88,6 +90,7 @@ end
 
 if ["phallstrom-l2.corp.instructure.com"].include?(Socket.gethostname)
   tap "codekitchen/dinghy"
+  tap "rwstauner/ynetd"
   brew "ansible"
   brew "awscli"
   brew "codekitchen/dinghy/unfs3"
@@ -95,4 +98,5 @@ if ["phallstrom-l2.corp.instructure.com"].include?(Socket.gethostname)
   brew "vault"
   brew "vaulted"
   brew "xhyve"
+  brew "ynetd"
 end

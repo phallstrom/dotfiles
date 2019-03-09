@@ -1,0 +1,1 @@
+[[ -d "$HOME/.bash_completion.d" ]] && for i in $HOME/.bash_completion.d/*; do source $i; done

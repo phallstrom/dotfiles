@@ -1,0 +1,4 @@
+bash:
+  - After installing bash via brew
+    - add /usr/local/bin/bash to /etc/shells
+    - chsh -s /usr/local/bin/bash

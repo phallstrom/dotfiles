@@ -1,5 +1,5 @@
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
 [[ -s "$HOME/.bash_profile_local" ]] && source "$HOME/.bash_profile_local"
 
 [ -r ~/.bashrc ] && source "$HOME/.bashrc"
-
-for i in ~/.bash_completion/*.bash; do source $i; done
