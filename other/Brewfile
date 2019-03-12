@@ -95,6 +95,7 @@ if ["phallstrom-l2.corp.instructure.com"].include?(Socket.gethostname)
   brew "awscli"
   brew "codekitchen/dinghy/unfs3"
   brew "openconnect"
+  brew "tfenv"
   brew "vault"
   brew "vaulted"
   brew "xhyve"
