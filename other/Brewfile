@@ -7,12 +7,19 @@ tap "homebrew/core"
 tap "homebrew/services"
 
 cask "1password"
+cask "alfred"
 cask "appzapper"
 cask "arq"
+cask "dash"
 cask "dropbox"
+cask "flux"
 cask "google-chrome"
 cask "imageoptim"
+cask "iterm2-beta"
 cask "macdown"
+cask "max"
+cask "piezo"
+cask "powerphotos"
 cask "qlcolorcode"
 cask "qlmarkdown"
 cask "qlprettypatch"
@@ -22,6 +29,8 @@ cask "spotify"
 cask "superduper"
 cask "the-unarchiver"
 
+brew "bash"
+brew "bash-completion@2"
 brew "colordiff"
 brew "coreutils"
 brew "fzf"
@@ -38,6 +47,7 @@ brew "nmap"
 brew "rbenv"
 brew "rbenv-aliases"
 brew "rbenv-default-gems"
+brew "roundup"
 brew "ruby-build"
 brew "the_silver_searcher"
 brew "trash"
@@ -60,10 +70,8 @@ mas "Xcode", id: 497799835
 mas "iMazing HEIC Converter", id: 1292198261
 mas "iMovie", id: 408981434
 
-if ["phallstrom-l2.corp.instructure.com", "Philips-MBP"].include?(Socket.gethostname)
+if ["phallstrom-l2.corp.instructure.com", "Stickers"].include?(Socket.gethostname)
   cask "java" 
-  brew "bash"
-  brew "bash-completion@2"
   brew "clojure"
   brew "leiningen"
   brew "libsass"
@@ -72,25 +80,10 @@ if ["phallstrom-l2.corp.instructure.com", "Philips-MBP"].include?(Socket.gethost
   brew "node@8"
   brew "redis"
   brew "rbspy"
-  cask "alfred"
   cask "chromedriver"
-  cask "dash"
   cask "docker"
-  cask "flux"
-  cask "iterm2-beta"
   cask "postgres"
   cask "virtualbox"
-else
-  cask "iterm2"
-  cask "superduper"
-  mas "GarageBand", id: 682658836
-end
-
-if ["Philips-MBP"].include?(Socket.gethostname)
-  brew "roundup"
-  cask "max"
-  cask "piezo"
-  cask "powerphotos"
 end
 
 if ["phallstrom-l2.corp.instructure.com"].include?(Socket.gethostname)
