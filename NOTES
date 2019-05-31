@@ -1,8 +1,15 @@
+brew:
+  - After installing dot files
+    - /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    - brew bundle install --global
+
 bash:
   - After installing bash via brew
-    - add /usr/local/bin/bash to /etc/shells
+    - echo "/usr/local/bin/bash" | sudo tee -a /etc/shells
     - chsh -s /usr/local/bin/bash
 
 ruby:
   - After installing rbenv
+    - rbenv install 2.5.5
+    - rbenv global 2.5.5
     - gem update --system
