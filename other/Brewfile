@@ -72,6 +72,7 @@ mas "iMovie", id: 408981434
 
 if ["phallstrom-l2.corp.instructure.com", "Stickers"].include?(Socket.gethostname)
   cask "java" 
+  cask "ngrok" 
   brew "clojure"
   brew "leiningen"
   brew "libsass"
