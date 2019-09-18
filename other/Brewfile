@@ -25,6 +25,7 @@ cask "qlmarkdown"
 cask "qlprettypatch"
 cask "qlstephen"
 cask "quicklook-json"
+cask "signal"
 cask "spotify"
 cask "superduper"
 cask "the-unarchiver"
@@ -70,7 +71,7 @@ mas "Xcode", id: 497799835
 mas "iMazing HEIC Converter", id: 1292198261
 mas "iMovie", id: 408981434
 
-if ["phallstrom-l2.corp.instructure.com", "Stickers"].include?(Socket.gethostname)
+if ["Stickers"].include?(Socket.gethostname)
   cask "java" 
   cask "ngrok" 
   brew "clojure"
@@ -85,18 +86,4 @@ if ["phallstrom-l2.corp.instructure.com", "Stickers"].include?(Socket.gethostnam
   cask "docker"
   cask "postgres"
   cask "virtualbox"
-end
-
-if ["phallstrom-l2.corp.instructure.com"].include?(Socket.gethostname)
-  tap "codekitchen/dinghy"
-  tap "rwstauner/ynetd"
-  brew "ansible"
-  brew "awscli"
-  brew "codekitchen/dinghy/unfs3"
-  brew "openconnect"
-  brew "tfenv"
-  brew "vault"
-  brew "vaulted"
-  brew "xhyve"
-  brew "ynetd"
 end
