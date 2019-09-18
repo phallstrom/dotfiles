@@ -10,6 +10,6 @@ bash:
 
 ruby:
   - After installing rbenv
-    - rbenv install 2.5.5
-    - rbenv global 2.5.5
+    - rbenv install 2.5.6
+    - rbenv global 2.5.6
     - gem update --system
