@@ -95,6 +95,7 @@ nmap \\  <Plug>Commentary
 
 set updatetime=250
 
+" https://github.com/janko/vim-test
 nmap <silent> <leader>s :TestNearest<CR>
 nmap <silent> <leader>t :TestFile<CR>
 nmap <silent> <leader>T :TestSuite<CR>
@@ -182,3 +183,5 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
 
 let NERDTreeShowHidden=1 " Always show dot files
+
+let test#strategy = 'vimterminal' " Runs test commands with term_start() in a split window.
