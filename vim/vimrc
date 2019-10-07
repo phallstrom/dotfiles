@@ -180,3 +180,5 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 
 " https://github.com/slim-template/vim-slim/issues/38#issuecomment-23760100
 autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
+
+let NERDTreeShowHidden=1 " Always show dot files
