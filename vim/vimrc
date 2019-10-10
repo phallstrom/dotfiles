@@ -36,6 +36,7 @@ Plug 'mechatroner/rainbow_csv'                " highlighting columns in csv/tsv 
 Plug 'slim-template/vim-slim' " slim syntax highlighting for vim
 Plug 'martinda/jenkinsfile-vim-syntax'        " Jenkinsfile DSL vim syntax
 Plug 'rbong/vim-flog'                         " git branch viewer that integrates with fugitive
+Plug 'ntpeters/vim-better-whitespace'
 
 Plug 'kien/rainbow_parentheses.vim', { 'for': ['clojure'] } " Better Rainbow Parentheses
 Plug 'guns/vim-clojure-static',      { 'for': ['clojure'] } " Meikel Brandmeyer's excellent Clojure runtime files
@@ -121,6 +122,7 @@ let g:ale_lint_on_enter = 0        " no checks on open
 let g:ale_lint_on_save = 1         " check on save
 let g:ale_lint_on_text_changed = 1 " check on text change
 let g:ale_lint_delay = 300         " millisecond delay before checking
+let g:ale_ruby_rubocop_executable = 'bundle'
 highlight ALEError ctermbg=none cterm=inverse
 highlight ALEWarning ctermbg=none cterm=inverse
 
@@ -185,3 +187,13 @@ autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
 let NERDTreeShowHidden=1 " Always show dot files
 
 let test#strategy = 'vimterminal' " Runs test commands with term_start() in a split window.
+
+" https://github.com/vim-ruby/vim-ruby/blob/1c70532339889b7794a52b956f389b4f9ab9b3eb/doc/ft-ruby-indent.txt#L101
+let g:ruby_indent_assignment_style = 'variable'
+
+" https://vimawesome.com/plugin/better-whitespace
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_confirm=0
+let g:strip_only_modified_lines=0
+let g:strip_whitelines_at_eof=1
+autocmd FileType ruby EnableStripWhitespaceOnSave
