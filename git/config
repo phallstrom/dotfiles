@@ -18,7 +18,7 @@
   branch = auto
   diff = auto
 [push]
-  default = matching
+	default = current
 [pull]
   default = matching
 [branch]
