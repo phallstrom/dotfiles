@@ -13,6 +13,7 @@ Plug 'sjl/gundo.vim'                          " graph your vim undo tree
 Plug 'tpope/vim-commentary'                   " comment stuff out
 Plug 'tpope/vim-endwise'                      " wisely add 'end' in ruby, endfunction/endif/more in vim script, etc
 Plug 'tpope/vim-fugitive'                     " git wrapper
+Plug 'tpope/vim-rhubarb'                      " github extension for fugitive.vim
 Plug 'tpope/vim-rails', { 'for': ['ruby'] }   " ruby on rails power tools
 Plug 'vim-ruby/vim-ruby', { 'for': ['ruby'] } " vim/ruby configuration
 Plug 'tpope/vim-projectionist'                " project configuration (file jumping)
@@ -125,6 +126,11 @@ let g:ale_lint_delay = 300         " millisecond delay before checking
 let g:ale_ruby_rubocop_executable = 'bundle'
 highlight ALEError ctermbg=none cterm=inverse
 highlight ALEWarning ctermbg=none cterm=inverse
+
+let g:ale_fixers = {
+\   'ruby': ['rubocop']
+\}
+
 
 " Airline
 let g:airline_theme = 'base16'                  " theme
