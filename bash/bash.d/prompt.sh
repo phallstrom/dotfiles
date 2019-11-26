@@ -1,37 +1,27 @@
-# If we're in a git repository return the branch name, otherwise nothing.  
+# If we're in a git repository return the branch name, otherwise nothing.
 function ps1_git {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
   echo " ${ref#refs/heads/} "
 }
 
-function ps1_docker {
-  [[ -x `command which dinghy` ]] || return
-  if [[ "$DOCKER_MACHINE_NAME" = "dinghy" ]]; then
-    echo "⛵️"
+function ps1_ruby {
+  if [[ -n $RBENV_SHELL ]]; then
+    rbenv version-name
   else
-    echo "🐳"
+    ruby --version | cut -d' ' -f2
   fi
 }
 
-function ps1_aws {
-  [[ -n $VAULTED_ENV ]] || return
-  ps1=""
-  ps1=$ps1'\[\e[38;5;15;48;5;1m\]'            # white on red
-  ps1=$ps1" AWS@$(echo $VAULTED_ENV | tr '[:lower:]' '[:upper:]') " # AWS@INSOPS
-  echo "$ps1"
-}
-
-function ps1_ruby {
-  [[ -n $RBENV_SHELL ]] || return
-  rbenv version-name
-}
-
 PS1=''
-PS1=$PS1'\[\e[38;5;15;48;5;2m\]'           # white on green
-PS1=$PS1'$(ps1_docker)'                    # docker machine indicator
-PS1=$PS1'\[\e[38;5;2;48;5;4m\]'            # green on blue
+
+if [[ -n $(id vagrant 2>/dev/null) ]]; then
+  PS1=$PS1'\[\e[38;5;15;48;5;1m\]'               # white on red
+  PS1=$PS1$(whoami | tr '[:lower:]' '[:upper:]') # USER
+  PS1=$PS1' '
+  PS1=$PS1'\[\e[38;5;1;48;5;4m\]'                # red on blue
+fi
+
 PS1=$PS1''
-PS1=$PS1$(ps1_aws)                         # AWS@INSOPS
 PS1=$PS1'\[\e[38;5;15;48;5;4m\]'           # white on blue
 PS1=$PS1' $(ps1_ruby) '                    # ruby
 PS1=$PS1'\[\e[38;5;4;48;5;2m\]'            # blue on green
@@ -52,4 +42,5 @@ PS1=$PS1''
 PS1=$PS1'\[\e[0m\]'                        # reset color
 PS1=$PS1' '                                # space color
 
+unset PROMPT_DIRTRIM
 PROMPT_COMMAND='echo -ne "\033]0;${PWD/$HOME/~}\007"'
