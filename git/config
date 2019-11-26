@@ -11,7 +11,6 @@
   br = branch
   retcon = commit --amend
   rc = commit --amend --no-edit
-  ps-changes = diff HEAD~1 --name-only
   changelog = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   lc = show --summary --format='Commit: %H%nAuthor: %an%n%n%s%n%n%b'
 [color]
