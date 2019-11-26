@@ -1,16 +1,19 @@
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
+if [[ -d "/usr/local/opt/fzf/bin" && ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
   export PATH="$PATH:/usr/local/opt/fzf/bin"
 fi
 
+[[ -d "/usr/local/opt/fzf" ]] && opt_fzf=/usr/local/opt/fzf
+[[ -d "/usr/share/fzf" ]] && opt_fzf=/usr/share/fzf
+
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.bash" 2> /dev/null
+[[ $- == *i* ]] && source "$opt_fzf/shell/completion.bash" 2> /dev/null
 
 # Key bindings
 # ------------
-source "/usr/local/opt/fzf/shell/key-bindings.bash"
+source "$opt_fzf/shell/key-bindings.bash"
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_DEFAULT_OPTS='--height 99% --reverse --color=16'
