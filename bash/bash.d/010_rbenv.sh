@@ -1,1 +1,1 @@
-[[ -x `command which rbenv` ]] && eval "$(rbenv init -)"
+[[ -x `command which rbenv 2> /dev/null` ]] && eval "$(rbenv init -)"
