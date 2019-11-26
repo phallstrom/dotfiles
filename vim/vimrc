@@ -7,7 +7,6 @@ Plug 'airblade/vim-gitgutter'                 " shows a git diff in the gutter
 Plug 'altercation/vim-colors-solarized'       " precision colorscheme
 Plug 'godlygeek/tabular'                      " text filtering and alignment
 Plug 'janko-m/vim-test'                       " test runner
-Plug 'phallstrom/vim-sailfish'
 Plug 'scrooloose/nerdtree'                    " tree explorer
 Plug 'sjl/gundo.vim'                          " graph your vim undo tree
 Plug 'tpope/vim-commentary'                   " comment stuff out
@@ -203,3 +202,5 @@ let g:strip_whitespace_confirm=0
 let g:strip_only_modified_lines=0
 let g:strip_whitelines_at_eof=1
 autocmd FileType ruby EnableStripWhitespaceOnSave
+
+set confirm " make projectionist/vim-rails alt file creation a thing
