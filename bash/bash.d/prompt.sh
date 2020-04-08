@@ -19,9 +19,9 @@ if [[ -n $(id vagrant 2>/dev/null) ]]; then
   PS1=$PS1$(whoami | tr '[:lower:]' '[:upper:]') # USER
   PS1=$PS1' '
   PS1=$PS1'\[\e[38;5;1;48;5;4m\]'                # red on blue
+  PS1=$PS1''
 fi
 
-PS1=$PS1''
 PS1=$PS1'\[\e[38;5;15;48;5;4m\]'           # white on blue
 PS1=$PS1' $(ps1_ruby) '                    # ruby
 PS1=$PS1'\[\e[38;5;4;48;5;2m\]'            # blue on green
