@@ -54,8 +54,13 @@ compiler ruby         " Enable compiler support for ruby
 
 filetype plugin on
 
-set background=dark
-colorscheme base16-oceanicnext
+if filereadable(expand("~/.iterm-light"))
+  set background=light
+  colorscheme base16-one-light
+else
+  set background=dark
+  colorscheme base16-oceanicnext
+endif
 
 set backspace=2
 set expandtab

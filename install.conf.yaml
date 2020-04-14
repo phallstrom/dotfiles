@@ -22,6 +22,8 @@
     ~/.agignore: other/agignore
     ~/.psqlrc: other/psqlrc
     ~/.Brewfile: other/Brewfile
+    ~/bin/itp: bin/itp
+    ~/bin/iterm2: bin/iterm2
 
 - shell:
   - [cp -f fonts/Monaco\ for\ Powerline.otf ~/Library/Fonts/Monaco\ for\ Powerline.otf,

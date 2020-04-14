@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if [[ -e $HOME/.iterm-light ]]
+then
+  rm $HOME/.iterm-light
+  $HOME/bin/iterm2/it2check && \
+    $HOME/bin/iterm2/it2setcolor preset base16-oceanicnext.dark
+else
+  touch $HOME/.iterm-light
+  $HOME/bin/iterm2/it2check && \
+    $HOME/bin/iterm2/it2setcolor preset base16-one-light
+fi
