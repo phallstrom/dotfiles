@@ -54,14 +54,8 @@ compiler ruby         " Enable compiler support for ruby
 
 filetype plugin on
 
-"let base16colorspace=256  " Access colors present in 256 colorspace
-if $ITERM_PROFILE =~ '^AWS '
-  set background=light
-  colorscheme solarized
-else
-  set background=dark
-  colorscheme base16-oceanicnext
-endif
+set background=dark
+colorscheme base16-oceanicnext
 
 set backspace=2
 set expandtab

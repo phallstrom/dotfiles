@@ -1,6 +1,6 @@
 [user]
-  name = Philip Hallstrom
-  email = philip@pjkh.com
+	name = Philip Hallstrom
+	email = philip.hallstrom@kennasecurity.com
 [core]
   excludesfile = ~/.gitignore
   trustctime = false
@@ -13,6 +13,7 @@
   rc = commit --amend --no-edit
   changelog = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   lc = show --summary --format='Commit: %H%nAuthor: %an%n%n%s%n%n%b'
+  undo-last = reset HEAD~
 [color]
   status = auto
   branch = auto
@@ -24,8 +25,8 @@
 [branch]
   autosetuprebase = always
 [filter "lfs"]
-  clean = git-lfs clean %f
-  smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
 [include]
