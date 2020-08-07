@@ -37,6 +37,7 @@ Plug 'slim-template/vim-slim' " slim syntax highlighting for vim
 Plug 'martinda/jenkinsfile-vim-syntax'        " Jenkinsfile DSL vim syntax
 Plug 'rbong/vim-flog'                         " git branch viewer that integrates with fugitive
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'phallstrom/vim-sailfish'
 
 Plug 'kien/rainbow_parentheses.vim', { 'for': ['clojure'] } " Better Rainbow Parentheses
 Plug 'guns/vim-clojure-static',      { 'for': ['clojure'] } " Meikel Brandmeyer's excellent Clojure runtime files
@@ -69,8 +70,8 @@ set autoindent
 set nowrap
 set nrformats=
 
-set backupdir=$HOME/.vimbackup,.
-set directory=$HOME/.vimswap,.
+set directory^=$HOME/.vimswap// " Put xxx.swp files in a central spot
+set backupdir^=$HOME/.vimswap// " Put xxx~ files in a central spot
 
 au FocusLost * :wa
 
