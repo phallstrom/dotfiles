@@ -44,6 +44,8 @@ Plug 'guns/vim-clojure-static',      { 'for': ['clojure'] } " Meikel Brandmeyer'
 Plug 'tpope/vim-fireplace',          { 'for': ['clojure'] } " Clojure REPL support
 Plug 'kovisoft/paredit',             { 'for': ['clojure'] } " Structured Editing of Lisp S-expres
 
+Plug 'mzlogin/vim-markdown-toc', { 'for': ['markdown'] } " generate table of contents for Markdown files
+
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -122,7 +124,6 @@ let g:ale_lint_on_enter = 0        " no checks on open
 let g:ale_lint_on_save = 1         " check on save
 let g:ale_lint_on_text_changed = 1 " check on text change
 let g:ale_lint_delay = 300         " millisecond delay before checking
-let g:ale_ruby_rubocop_executable = 'bundle'
 highlight ALEError ctermbg=none cterm=inverse
 highlight ALEWarning ctermbg=none cterm=inverse
 
@@ -201,6 +202,6 @@ let g:better_whitespace_enabled=1
 let g:strip_whitespace_confirm=0
 let g:strip_only_modified_lines=0
 let g:strip_whitelines_at_eof=1
-autocmd FileType ruby EnableStripWhitespaceOnSave
+autocmd FileType ruby,markdown EnableStripWhitespaceOnSave
 
 set confirm " make projectionist/vim-rails alt file creation a thing
