@@ -1,2 +1,10 @@
-*.rb diff=ruby
-*.rake diff=ruby
+*.css   diff=css
+*.go    diff=golang
+*.html  diff=html
+*.md    diff=markdown
+*.php   diff=php
+*.pl    diff=perl
+*.py    diff=python
+*.rake  diff=ruby
+*.rb    diff=ruby
+*.xhtml diff=html
