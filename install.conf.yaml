@@ -15,6 +15,7 @@
     ~/.vimrc: vim/vimrc
     ~/.gitconfig: git/config
     ~/.gitignore: git/ignore
+    ~/.gitattributes: git/attributes
     ~/.irbrc: ruby/irbrc
     ~/.pryrc: ruby/pryrc
     ~/.rspec: ruby/rspec

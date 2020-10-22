@@ -3,6 +3,7 @@
 [core]
   excludesfile = ~/.gitignore
   trustctime = false
+	attributesfile = ~/.gitattributes
 [alias]
   co = checkout
   st = status
