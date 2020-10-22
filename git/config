@@ -1,6 +1,5 @@
 [user]
 	name = Philip Hallstrom
-	email = philip.hallstrom@kennasecurity.com
 [core]
   excludesfile = ~/.gitignore
   trustctime = false
