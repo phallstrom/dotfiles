@@ -29,3 +29,7 @@
 - shell:
   - [cp -f fonts/Monaco\ for\ Powerline.otf ~/Library/Fonts/Monaco\ for\ Powerline.otf,
     "Installing font 'Monaco for Powerline'"]
+
+- shell:
+  - [cp -f other/FunkClassic.aiff ~/Library/Sounds/FunkClassic.aiff,
+    "Installing pre-Big Sur Funk.aiff]
