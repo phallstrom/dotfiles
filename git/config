@@ -1,5 +1,6 @@
 [user]
 	name = Philip Hallstrom
+	email = philip@pjkh.com
 [core]
   excludesfile = ~/.gitignore
   trustctime = false
