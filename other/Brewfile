@@ -73,12 +73,10 @@ mas "iMovie", id: 408981434
 if ["Stickers"].include?(Socket.gethostname)
   cask "java" 
   cask "ngrok" 
-  brew "clojure"
-  brew "leiningen"
   brew "libsass"
   brew "libxml2"
   brew "libxmlsec1"
-  brew "node@8"
+  brew "node"
   brew "redis"
   brew "rbspy"
   cask "chromedriver"
