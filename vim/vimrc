@@ -13,8 +13,8 @@ Plug 'tpope/vim-commentary'                   " comment stuff out
 Plug 'tpope/vim-endwise'                      " wisely add 'end' in ruby, endfunction/endif/more in vim script, etc
 Plug 'tpope/vim-fugitive'                     " git wrapper
 Plug 'tpope/vim-rhubarb'                      " github extension for fugitive.vim
-Plug 'tpope/vim-rails', { 'for': ['ruby'] }   " ruby on rails power tools
-Plug 'vim-ruby/vim-ruby', { 'for': ['ruby'] } " vim/ruby configuration
+Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }   " ruby on rails power tools
+Plug 'vim-ruby/vim-ruby', { 'for': ['ruby', 'eruby'] } " vim/ruby configuration
 Plug 'tpope/vim-projectionist'                " project configuration (file jumping)
 " Plug 'ydeweerdt/file-line'                    " enabling opening a file in a given line
 Plug 'kana/vim-textobj-user'                  " create your own text objects
@@ -148,7 +148,7 @@ endif
 let g:jsx_ext_required = 0 " JSX syntax in .js files
 
 " open file splits in vsplit by default
-:nnoremap <C-W>f :vertical wincmd f<CR> 
+:nnoremap <C-W>f :vertical wincmd f<CR>
 
 " https://github.com/posva/vim-vue#how-can-i-use-existing-configurationplugins-in-vue-files
 " autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
@@ -206,3 +206,5 @@ let g:strip_whitelines_at_eof=1
 autocmd FileType ruby,markdown EnableStripWhitespaceOnSave
 
 set confirm " make projectionist/vim-rails alt file creation a thing
+
+autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
