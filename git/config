@@ -1,5 +1,6 @@
 [user]
 	name = Philip Hallstrom
+	email = philip@pjkh.com
 [core]
   excludesfile = ~/.gitignore
   trustctime = false
@@ -33,3 +34,5 @@
   path = ~/.gitconfig_local
 [diff]
 	noprefix = true
+[remote "origin"]
+  prune = true
