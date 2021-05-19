@@ -39,6 +39,7 @@ Plug 'martinda/jenkinsfile-vim-syntax'        " Jenkinsfile DSL vim syntax
 Plug 'rbong/vim-flog'                         " git branch viewer that integrates with fugitive
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'phallstrom/vim-sailfish'
+Plug 'embear/vim-localvimrc'                  " searches for local vimrc files in the file system tree
 
 Plug 'kien/rainbow_parentheses.vim', { 'for': ['clojure'] } " Better Rainbow Parentheses
 Plug 'guns/vim-clojure-static',      { 'for': ['clojure'] } " Meikel Brandmeyer's excellent Clojure runtime files
@@ -121,6 +122,7 @@ let g:omni_sql_no_default_maps = 1 " disable SQL autocompletion entirely
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " ALE - Asynchronous Lint Engine
+let g:ale_enabled = 0              " disable ALE by default. Enable it locally.
 let g:ale_lint_on_enter = 0        " no checks on open
 let g:ale_lint_on_save = 1         " check on save
 let g:ale_lint_on_text_changed = 1 " check on text change
@@ -128,10 +130,13 @@ let g:ale_lint_delay = 300         " millisecond delay before checking
 highlight ALEError ctermbg=none cterm=inverse
 highlight ALEWarning ctermbg=none cterm=inverse
 
+let g:ale_linters = {
+\   'ruby': ['brakeman', 'debride', 'reek', 'rubocop', 'ruby', 'solargraph', 'sorbet', 'standardrb']
+\}
+
 let g:ale_fixers = {
 \   'ruby': ['rubocop']
 \}
-
 
 " Airline
 let g:airline_theme = 'base16'                  " theme
@@ -140,10 +145,6 @@ set noshowmode                                  " hide default mode indicator
 let g:airline_powerline_fonts = 1               " use powerline font
 let g:airline#extensions#wordcount#enabled = 0  " disable word counting
 let g:airline#extensions#whitespace#enabled = 0 " disable detection of whitespace errors
-
-if filereadable($HOME."/.vimrc_local")
-  source $HOME/.vimrc_local
-endif
 
 let g:jsx_ext_required = 0 " JSX syntax in .js files
 
@@ -208,3 +209,7 @@ autocmd FileType ruby,markdown,text EnableStripWhitespaceOnSave
 set confirm " make projectionist/vim-rails alt file creation a thing
 
 autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
+
+" https://vimawesome.com/plugin/localvimrc
+let g:localvimrc_name=[ ".vimrc_local" ] " Set filename to look for.
+let g:localvimrc_persistent=2            " Store and restore all decisions about loading localvimrc files.
