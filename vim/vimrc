@@ -41,11 +41,6 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'phallstrom/vim-sailfish'
 Plug 'embear/vim-localvimrc'                  " searches for local vimrc files in the file system tree
 
-Plug 'kien/rainbow_parentheses.vim', { 'for': ['clojure'] } " Better Rainbow Parentheses
-Plug 'guns/vim-clojure-static',      { 'for': ['clojure'] } " Meikel Brandmeyer's excellent Clojure runtime files
-Plug 'tpope/vim-fireplace',          { 'for': ['clojure'] } " Clojure REPL support
-Plug 'kovisoft/paredit',             { 'for': ['clojure'] } " Structured Editing of Lisp S-expres
-
 Plug 'mzlogin/vim-markdown-toc', { 'for': ['markdown'] } " generate table of contents for Markdown files
 
 call plug#end()
@@ -153,37 +148,6 @@ let g:jsx_ext_required = 0 " JSX syntax in .js files
 
 " https://github.com/posva/vim-vue#how-can-i-use-existing-configurationplugins-in-vue-files
 " autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
-
-" rainbow parantheses: remove black from the default set of colors as it's
-" impossible to see on dark backgrounds
-let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'SeaGreen3'],
-    \ ['brown',       'firebrick3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
-    \ ]
-
-au FileType clojure exe "RainbowParenthesesLoadRound" | RainbowParenthesesActivate
-
-" all subforms are aligned to the same column
-" see: https://github.com/guns/vim-clojure-static#gclojure_align_subforms
-let g:clojure_align_subforms=1
-
-" align subsequent lines in multiline strings to the column after the opening
-" quote, instead of the same column.
-" see: https://github.com/guns/vim-clojure-static#gclojure_align_multiline_strings
-let g:clojure_align_multiline_strings=1
 
 " open NERDTree automatically when vim starts up on opening a directory
 autocmd StdinReadPre * let s:std_in=1
