@@ -16,12 +16,11 @@ Plug 'tpope/vim-rhubarb'                      " github extension for fugitive.vi
 Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }   " ruby on rails power tools
 Plug 'vim-ruby/vim-ruby', { 'for': ['ruby', 'eruby'] } " vim/ruby configuration
 Plug 'tpope/vim-projectionist'                " project configuration (file jumping)
-" Plug 'ydeweerdt/file-line'                    " enabling opening a file in a given line
 Plug 'kana/vim-textobj-user'                  " create your own text objects
 Plug 'nelstrom/vim-textobj-rubyblock'         " custom text object for selecting ruby blocks
 Plug 'tpope/vim-surround'                     " quoting/parenthesizing made simple
 " Plug 'chriskempson/base16-vim'                " color schemes, https://chriskempson.github.io/base16/
-Plug 'danielwe/base16-vim'                " color schemes, https://chriskempson.github.io/base16/
+Plug 'danielwe/base16-vim'                    " color schemes, https://chriskempson.github.io/base16/
 Plug 'w0rp/ale'                               " asynchronous lint engine
 Plug 'editorconfig/editorconfig-vim'          " editorConfig plugin
 Plug 'vim-airline/vim-airline'                " status/tabline
@@ -34,13 +33,11 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-unimpaired'                   " pairs of handy bracket mappings
 Plug 'tpope/vim-abolish'                      " easily search for, substitute, and abbreviate multiple variants of a word
 Plug 'mechatroner/rainbow_csv'                " highlighting columns in csv/tsv files
-Plug 'slim-template/vim-slim' " slim syntax highlighting for vim
+Plug 'slim-template/vim-slim'                 " slim syntax highlighting for vim
 Plug 'martinda/jenkinsfile-vim-syntax'        " Jenkinsfile DSL vim syntax
 Plug 'rbong/vim-flog'                         " git branch viewer that integrates with fugitive
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'phallstrom/vim-sailfish'
+Plug 'ntpeters/vim-better-whitespace'         " highlight trailing whitespace
 Plug 'embear/vim-localvimrc'                  " searches for local vimrc files in the file system tree
-
 Plug 'mzlogin/vim-markdown-toc', { 'for': ['markdown'] } " generate table of contents for Markdown files
 
 call plug#end()
