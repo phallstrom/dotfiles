@@ -9,25 +9,14 @@ tap "homebrew/services"
 cask "1password"
 cask "alfred"
 cask "appzapper"
-cask "arq"
 cask "dash"
 cask "dropbox"
 cask "fork"
 cask "flux"
 cask "google-chrome"
-cask "imageoptim"
 cask "iterm2-beta"
 cask "macdown"
-cask "piezo"
-cask "powerphotos"
-cask "qlcolorcode"
-cask "qlmarkdown"
-cask "qlprettypatch"
-cask "qlstephen"
-cask "quicklook-json"
-cask "signal"
 cask "spotify"
-cask "superduper"
 cask "the-unarchiver"
 
 brew "bash"
@@ -56,9 +45,7 @@ brew "tmux"
 brew "vim"
 brew "wget"
 
-mas "1Blocker", id: 1107421413
 mas "Amphetamine", id: 937984704
-mas "Cascadea", id: 1432182561
 mas "GIF Brewery 3", id: 1081413713
 mas "GIPHY CAPTURE", id: 668208984
 mas "Keynote", id: 409183694
@@ -68,10 +55,14 @@ mas "Pages", id: 409201541
 mas "Pixelmator", id: 407963104
 mas "Slack", id: 803453959
 mas "Xcode", id: 497799835
-mas "iMazing HEIC Converter", id: 1292198261
 mas "iMovie", id: 408981434
 
 if ["Stickers"].include?(Socket.gethostname)
+  cask "piezo"
+  cask "powerphotos"
+  cask "signal"
+  cask "superduper"
+  cask "arq"
   cask "java" 
   cask "ngrok" 
   brew "libsass"
