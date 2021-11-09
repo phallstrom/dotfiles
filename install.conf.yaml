@@ -27,9 +27,10 @@
     ~/bin/iterm2: bin/iterm2
 
 - shell:
-  - [cp -f fonts/Monaco\ for\ Powerline.otf ~/Library/Fonts/Monaco\ for\ Powerline.otf,
-    "Installing font 'Monaco for Powerline'"]
+  - [cp -f fonts/Monaco\ for\ Powerline.otf ~/Library/Fonts/Monaco\ for\ Powerline.otf, "Installing font 'Monaco for Powerline'"]
+
+- create:
+  - ~/Library/Sounds
 
 - shell:
-  - [cp -f other/FunkClassic.aiff ~/Library/Sounds/FunkClassic.aiff,
-    "Installing pre-Big Sur Funk.aiff]
+  - [cp -f other/FunkClassic.aiff ~/Library/Sounds/FunkClassic.aiff, "Installing pre-Big Sur Funk.aiff"]
