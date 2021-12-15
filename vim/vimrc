@@ -40,6 +40,7 @@ Plug 'ntpeters/vim-better-whitespace'         " highlight trailing whitespace
 Plug 'embear/vim-localvimrc'                  " searches for local vimrc files in the file system tree
 Plug 'mzlogin/vim-markdown-toc', { 'for': ['markdown'] } " generate table of contents for Markdown files
 Plug 'Julian/vim-textobj-variable-segment'    " A text object to turn foo_bar_baz into foo_baz *and* quuxSpamEggs into quuxEggs 
+Plug 'fatih/vim-go', { 'for': ['go'] }        " Go language support
 
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -97,6 +98,7 @@ set updatetime=250
 nmap <silent> <leader>s :TestNearest<CR>
 nmap <silent> <leader>t :TestFile<CR>
 nmap <silent> <leader>T :TestSuite<CR>
+let test#strategy = 'vimterminal' " Runs test commands with term_start() in a split window.
 
 set mouse=a
 vnoremap <Leader>c "*y
@@ -155,8 +157,6 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
 
 let NERDTreeShowHidden=1 " Always show dot files
-
-let test#strategy = 'vimterminal' " Runs test commands with term_start() in a split window.
 
 " https://github.com/vim-ruby/vim-ruby/blob/1c70532339889b7794a52b956f389b4f9ab9b3eb/doc/ft-ruby-indent.txt#L101
 let g:ruby_indent_assignment_style = 'variable'
