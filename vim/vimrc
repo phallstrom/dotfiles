@@ -41,6 +41,7 @@ Plug 'embear/vim-localvimrc'                  " searches for local vimrc files i
 Plug 'mzlogin/vim-markdown-toc', { 'for': ['markdown'] } " generate table of contents for Markdown files
 Plug 'Julian/vim-textobj-variable-segment'    " A text object to turn foo_bar_baz into foo_baz *and* quuxSpamEggs into quuxEggs 
 Plug 'fatih/vim-go', { 'for': ['go'] }        " Go language support
+Plug 'jvirtanen/vim-hcl', { 'for': ['hcl'] }  " hashicorp config language syntax
 
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
