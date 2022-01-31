@@ -16,7 +16,6 @@ cask "fork"
 cask "flux"
 cask "iterm2-beta"
 cask "macdown"
-cask "spotify"
 cask "the-unarchiver"
 
 brew "bash"
