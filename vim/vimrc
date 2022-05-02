@@ -42,6 +42,9 @@ Plug 'mzlogin/vim-markdown-toc', { 'for': ['markdown'] } " generate table of con
 Plug 'Julian/vim-textobj-variable-segment'    " A text object to turn foo_bar_baz into foo_baz *and* quuxSpamEggs into quuxEggs 
 Plug 'fatih/vim-go', { 'for': ['go'] }        " Go language support
 Plug 'jvirtanen/vim-hcl', { 'for': ['hcl'] }  " hashicorp config language syntax
+Plug 'phallstrom/vim-sailfish'
+Plug 'psliwka/vim-dirtytalk', { 'do': ':DirtytalkUpdate' } " spellcheck dictionary for programmers
+
 
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -88,6 +91,9 @@ source $VIMRUNTIME/macros/matchit.vim
 " fzf
 nnoremap <silent> <C-p> :Files<CR>
 nnoremap <silent> <Leader>b :Buffers<CR>
+nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
+nnoremap <silent> <Leader>tag :Tags <C-R><C-W><CR>
+let g:fzf_tags_command = 'ripper-tags -R --exclude=vendor'
 
 " https://github.com/tpope/vim-commentary/commit/4dcfc318e0b02fdbb0c2d9ff77cf3562b46eea25
 xmap \\  <Plug>Commentary
@@ -131,7 +137,7 @@ let g:ale_linters = {
 \}
 
 let g:ale_fixers = {
-\   'ruby': ['rubocop']
+\   'ruby': ['rubocop', 'standardrb']
 \}
 
 " Airline
