@@ -5,6 +5,7 @@
   excludesfile = ~/.gitignore
   trustctime = false
 	attributesfile = ~/.gitattributes
+  pager = less -R
 [alias]
   co = checkout
   st = status
