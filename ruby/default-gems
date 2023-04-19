@@ -1,4 +1,5 @@
 bundler ~>1
 bundler ~>2
+http
 pry
 ripper-tags
