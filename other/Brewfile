@@ -7,6 +7,7 @@ cask "1password"
 cask "alfred"
 cask "appzapper"
 cask "arq"
+cask "bartender"
 cask "brave-browser"
 cask "chromedriver"
 cask "dash"
@@ -20,12 +21,12 @@ cask "iterm2-beta"
 cask "macdown"
 cask "ngrok"
 cask "piezo"
-cask "postgres"
+# cask "postgres"
 # cask "powerphotos"
 cask "signal"
 cask "superduper"
 cask "the-unarchiver"
-cask "virtualbox"
+# cask "virtualbox"
 
 brew "bash"
 brew "bash-completion@2"
@@ -59,7 +60,7 @@ brew "wget"
 brew "youtube-dl"
 
 mas "Amphetamine", id: 937984704
-mas "GIF Brewery 3", id: 1081413713
+# mas "GIF Brewery 3", id: 1081413713
 mas "GIPHY CAPTURE", id: 668208984
 mas "Magnet", id: 441258766
 mas "Pixelmator", id: 407963104

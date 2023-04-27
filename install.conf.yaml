@@ -16,6 +16,7 @@
     ~/.gitconfig: git/config
     ~/.gitignore: git/ignore
     ~/.gitattributes: git/attributes
+    ~/.gemrc: ruby/gemrc
     ~/.irbrc: ruby/irbrc
     ~/.pryrc: ruby/pryrc
     ~/.rspec: ruby/rspec
