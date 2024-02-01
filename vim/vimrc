@@ -4,11 +4,9 @@ let g:plug_shallow = 0 " disable shallow cloning
 call plug#begin()
 
 Plug 'airblade/vim-gitgutter'                 " shows a git diff in the gutter
-Plug 'altercation/vim-colors-solarized'       " precision colorscheme
 Plug 'godlygeek/tabular'                      " text filtering and alignment
 Plug 'janko-m/vim-test'                       " test runner
 Plug 'scrooloose/nerdtree'                    " tree explorer
-Plug 'sjl/gundo.vim'                          " graph your vim undo tree
 Plug 'tpope/vim-commentary'                   " comment stuff out
 Plug 'tpope/vim-endwise'                      " wisely add 'end' in ruby, endfunction/endif/more in vim script, etc
 Plug 'tpope/vim-fugitive'                     " git wrapper
@@ -19,14 +17,12 @@ Plug 'tpope/vim-projectionist'                " project configuration (file jump
 Plug 'kana/vim-textobj-user'                  " create your own text objects
 Plug 'nelstrom/vim-textobj-rubyblock'         " custom text object for selecting ruby blocks
 Plug 'tpope/vim-surround'                     " quoting/parenthesizing made simple
-" Plug 'chriskempson/base16-vim'                " color schemes, https://chriskempson.github.io/base16/
-Plug 'danielwe/base16-vim'                    " color schemes, https://chriskempson.github.io/base16/
+Plug 'danielwe/base16-vim'                    " color schemes
 Plug 'w0rp/ale'                               " asynchronous lint engine
 Plug 'editorconfig/editorconfig-vim'          " editorConfig plugin
 Plug 'vim-airline/vim-airline'                " status/tabline
 Plug 'vim-airline/vim-airline-themes'         " status/tabline themes
-Plug 'pangloss/vim-javascript'                " Javascript syntax
-Plug 'mxw/vim-jsx'                            " react jsx syntax
+Plug 'pangloss/vim-javascript', { 'for': ['javascript'] }                " Javascript syntax
 Plug 'posva/vim-vue', { 'for': ['vue'] }      " Vue.js syntax
 Plug 'junegunn/fzf'                           " A command-line fuzzy finder written in Go
 Plug 'junegunn/fzf.vim'
@@ -34,16 +30,15 @@ Plug 'tpope/vim-unimpaired'                   " pairs of handy bracket mappings
 Plug 'tpope/vim-abolish'                      " easily search for, substitute, and abbreviate multiple variants of a word
 Plug 'mechatroner/rainbow_csv'                " highlighting columns in csv/tsv files
 Plug 'slim-template/vim-slim'                 " slim syntax highlighting for vim
-Plug 'martinda/jenkinsfile-vim-syntax'        " Jenkinsfile DSL vim syntax
 Plug 'rbong/vim-flog'                         " git branch viewer that integrates with fugitive
 Plug 'ntpeters/vim-better-whitespace'         " highlight trailing whitespace
 Plug 'embear/vim-localvimrc'                  " searches for local vimrc files in the file system tree
 Plug 'mzlogin/vim-markdown-toc', { 'for': ['markdown'] } " generate table of contents for Markdown files
 Plug 'Julian/vim-textobj-variable-segment'    " A text object to turn foo_bar_baz into foo_baz *and* quuxSpamEggs into quuxEggs 
-Plug 'fatih/vim-go', { 'for': ['go'] }        " Go language support
-Plug 'jvirtanen/vim-hcl', { 'for': ['hcl'] }  " hashicorp config language syntax
+Plug 'fatih/vim-go', { 'for': ['go'], 'do': ':GoUpdateBinaries' }        " Go language support
 Plug 'phallstrom/vim-sailfish'
 Plug 'psliwka/vim-dirtytalk', { 'do': ':DirtytalkUpdate' } " spellcheck dictionary for programmers
+Plug 'valloric/youcompleteme', { 'do': './install.py --all' } " a code-completion engine for vim
 
 
 call plug#end()
@@ -84,7 +79,14 @@ set ttyfast
 set hidden
 set wildmenu
 set wildmode=list:longest
+
+" When a file has been detected to have been changed outside of Vim and it has
+" not been changed inside of Vim, automatically read it again.
+set autoread
+
 nnoremap <leader>nt :NERDTreeToggle<enter>
+set wildignore+=*.swp,*.DS_Store
+let NERDTreeRespectWildIgnore=1
 
 source $VIMRUNTIME/macros/matchit.vim
 
@@ -182,3 +184,19 @@ autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
 " https://vimawesome.com/plugin/localvimrc
 let g:localvimrc_name=[ ".vimrc_local" ] " Set filename to look for.
 let g:localvimrc_persistent=2            " Store and restore all decisions about loading localvimrc files.
+
+" Go syntax highlighting
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_operators = 1
+
+augroup go
+  autocmd FileType go map :A :GoAlternate
+augroup END
+
+
+" https://github.com/psliwka/vim-dirtytalk
+set spelllang=en,programming
+
