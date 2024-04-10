@@ -108,6 +108,7 @@ nmap <silent> <leader>s :TestNearest<CR>
 nmap <silent> <leader>t :TestFile<CR>
 nmap <silent> <leader>T :TestSuite<CR>
 let test#strategy = 'vimterminal' " Runs test commands with term_start() in a split window.
+let test#go#gotest#executable = '$HOME/go/bin/gotestsum -f testdox --'
 
 set mouse=a
 vnoremap <Leader>c "*y
@@ -193,10 +194,23 @@ let g:go_highlight_extra_types = 1
 let g:go_highlight_operators = 1
 
 augroup go
-  autocmd FileType go map :A :GoAlternate
+  " autocmd FileType go map :A :GoAlternate
+  autocmd FileType go nmap gf :YcmCompleter GoTo<CR>
 augroup END
 
+augroup markdown
+  autocmd FileType markdown setlocal spell
+augroup END
+
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 " https://github.com/psliwka/vim-dirtytalk
 set spelllang=en,programming
 
+hi clear SpellBad
+hi SpellBad term=reverse ctermfg=0 ctermbg=1 guifg=#1B2B34 guibg=#EC5f67
+hi clear SpellCap
+hi SpellCap term=reverse cterm=undercurl ctermfg=0 ctermbg=12 gui=undercurl guisp=#6699CC
+hi clear SpellRare
+hi SpellRare term=reverse cterm=undercurl ctermfg=0 ctermbg=13 gui=undercurl guisp=#C594C5
