@@ -111,6 +111,7 @@ let test#strategy = 'vimterminal' " Runs test commands with term_start() in a sp
 let test#go#gotest#executable = '$HOME/go/bin/gotestsum -f testdox --'
 
 set mouse=a
+noremap <Leader>c :%y*<CR>
 vnoremap <Leader>c "*y
 noremap <Leader>v "*p
 
