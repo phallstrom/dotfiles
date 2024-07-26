@@ -93,7 +93,7 @@ source $VIMRUNTIME/macros/matchit.vim
 " fzf
 nnoremap <silent> <C-p> :Files<CR>
 nnoremap <silent> <Leader>b :Buffers<CR>
-nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
+nnoremap <silent> <Leader>rg :Rg <C-R><C-W><CR>
 nnoremap <silent> <Leader>tag :Tags <C-R><C-W><CR>
 let g:fzf_tags_command = 'ripper-tags -R --exclude=vendor'
 

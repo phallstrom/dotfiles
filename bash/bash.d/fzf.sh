@@ -16,11 +16,11 @@ if [[ -n "$opt_fzf" ]]; then
   # ------------
   source "$opt_fzf/shell/key-bindings.bash"
 
-  export FZF_DEFAULT_COMMAND='ag -g ""'
+  export FZF_DEFAULT_COMMAND='rg -l ""'
   export FZF_DEFAULT_OPTS='--height 99% --reverse --color=16'
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
   _fzf_compgen_path() {
-    ag -g "" "$1"
+    rg -l "" "$1"
   }
 fi
