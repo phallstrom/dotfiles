@@ -22,6 +22,7 @@
     ~/.rspec: ruby/rspec
     ~/.tmux.conf: other/tmux.conf
     ~/.agignore: other/agignore
+    ~/.rgignore: other/rgignore
     ~/.psqlrc: other/psqlrc
     ~/.Brewfile: other/Brewfile
     ~/bin/itp: bin/itp
