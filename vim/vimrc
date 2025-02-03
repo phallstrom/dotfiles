@@ -182,6 +182,7 @@ autocmd FileType ruby,markdown,text EnableStripWhitespaceOnSave
 set confirm " make projectionist/vim-rails alt file creation a thing
 
 autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
+autocmd BufRead,BufNewFile *.env.* set filetype=sh
 
 " https://vimawesome.com/plugin/localvimrc
 let g:localvimrc_name=[ ".vimrc_local" ] " Set filename to look for.
