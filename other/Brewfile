@@ -1,9 +1,5 @@
 tap "1password/tap"
-tap "hashicorp/tap"
-tap "homebrew/bundle"
-tap "homebrew/cask-versions"
-tap "homebrew/services"
-tap "k-nasa/tap"
+tap "joschi/dive"
 tap "ynqa/tap"
 
 cask "1password"
@@ -17,7 +13,6 @@ cask "dropbox"
 cask "fork"
 cask "iterm2@beta"
 cask "jordanbaird-ice"
-cask "macdown"
 cask "piezo"
 cask "signal"
 cask "the-unarchiver"
@@ -32,10 +27,11 @@ cask "the-unarchiver"
 
 brew "bash"
 brew "bash-completion@2"
+brew "cmake"
 brew "colordiff"
 brew "coreutils"
 brew "csvkit"
-brew "dive"
+brew "joschi/dive"
 brew "fzf"
 brew "gawk"
 brew "gh"
@@ -59,7 +55,6 @@ brew "rbenv-aliases"
 brew "rbenv-default-gems"
 brew "ripgrep"
 brew "ruby-build"
-brew "tmate"
 brew "tmux"
 brew "trash", link: true
 brew "vim"
@@ -75,4 +70,4 @@ mas "Magnet", id: 441258766
 mas "Pixelmator", id: 407963104
 mas "Pixelmator Pro", id: 1289583905
 mas "Slack", id: 803453959
-mas "Xcode", id: 497799835
+# mas "Xcode", id: 497799835
