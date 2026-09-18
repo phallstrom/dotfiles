@@ -12,3 +12,4 @@ go
 tags
 node_modules
 env
+public/elements
