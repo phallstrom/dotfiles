@@ -1,16 +1,17 @@
 brew:
   - After installing dot files
-    - /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     - brew bundle install --global
 
 bash:
   - After installing bash via brew
-    - echo "/usr/local/bin/bash" | sudo tee -a /etc/shells
-    - chsh -s /usr/local/bin/bash
+    - echo "/opt/homebrew/bin/bash" | sudo tee -a /etc/shells
+    - chsh -s /opt/homebrew/bin/bash
 
 ruby:
   - After installing rbenv
-    - rbenv install 3.2.2
-    - rbenv global 3.2.2
+    - sudo xcodebuild -license
+    - rbenv install 3.4.1
+    - rbenv global 3.4.1
     - (open a new shell)
     - gem update --system
