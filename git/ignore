@@ -10,3 +10,5 @@ gemsurance_report.html
 .sailfish
 .vimrc_local
 tags
+
+**/.claude/settings.local.json
